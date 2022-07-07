@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .login-btn {
+    @apply flex items-center px-4 rounded-sm font-semibold text-left space-x-4;
+  }
+}
+
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif;
+}
