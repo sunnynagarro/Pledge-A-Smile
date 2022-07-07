@@ -110,27 +110,27 @@ function Dashboard({ user }) {
             <ins
               className="adsbygoogle w-full h-full max-w-[234px] max-h-[60px] md:max-w-[468px] md:max-h-[60px] lg:max-w[720px] lg:max-h[90px]"
               style={{ display: "block" }}
-              data-ad-client="ca-pub-6577557805751368"
-              data-ad-slot="3205106399"
+              data-ad-client="ca-pub-5067002529301261"
+              data-ad-slot="2151146654"
             ></ins>
           </div>
           <div className="flex items-center justify-center col-start-1 lg:col-start-3 row-start-1 row-span-2 overflow-auto">
-            {/* {user.impactLevel > 2 && (
+            {user.impactLevel > 2 && (
               <ins
                 className="adsbygoogle w-full h-full max-w-[125px] max-h-[125px] md:max-w-[200px] md:max-h-[200px]"
                 style={{ display: "block" }}
-                data-ad-client="ca-pub-6577557805751368"
-                data-ad-slot="5162622688"
+                data-ad-client="ca-pub-5067002529301261"
+                data-ad-slot="8333411625"
               ></ins>
-            )} */}
+            )}
           </div>
           <div className="flex items-center justify-center col-start-1 lg:col-start-3 row-start-3 row-span-2 overflow-auto">
             {user.impactLevel > 1 && (
               <ins
                 className="adsbygoogle w-full h-full max-w-[125px] max-h-[125px] md:max-w-[200px] md:max-h-[200px]"
                 style={{ display: "block" }}
-                data-ad-client="ca-pub-6577557805751368"
-                data-ad-slot="5162622688"
+                data-ad-client="ca-pub-5067002529301261"
+                data-ad-slot="3081084945"
               ></ins>
             )}
           </div>
