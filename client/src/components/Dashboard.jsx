@@ -18,10 +18,10 @@ import Logo from "../assets/logo-dashboard.png";
 import Invite from "./DashboardComponents/Invite";
 import GlobalImpact from "./DashboardComponents/GlobalImpact";
 import UserImpact from "./DashboardComponents/UserImpact";
+import GoogleAds from "./GoogleAds";
 
 function Dashboard({ user }) {
   useEffect(() => {
-    // window.adsbygoogle = (window.adsbygoogle || []).push({});
     if (
       !window.performance
         .getEntriesByType("navigation")
@@ -107,31 +107,43 @@ function Dashboard({ user }) {
         </div>
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-[1fr_1fr_400px] grid-rows-5 w-full mt-2">
           <div className="flex items-center justify-center col-start-1 lg:col-start-2 row-start-5 overflow-hidden">
-            <ins
-              className="adsbygoogle w-full h-full max-w-[234px] max-h-[60px] md:max-w-[468px] md:max-h-[60px] lg:max-w[720px] lg:max-h[90px]"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-5067002529301261"
-              data-ad-slot="2151146654"
-            ></ins>
+            <GoogleAds
+              clientId="ca-pub-5067002529301261"
+              slotId="2151146654"
+              smw="234px"
+              smh="60px"
+              mdw="468px"
+              mdh="60px"
+              lgw="720px"
+              lgh="90px"
+            />
           </div>
           <div className="flex items-center justify-center col-start-1 lg:col-start-3 row-start-1 row-span-2 overflow-auto">
             {user.impactLevel > 2 && (
-              <ins
-                className="adsbygoogle w-full h-full max-w-[125px] max-h-[125px] md:max-w-[200px] md:max-h-[200px]"
-                style={{ display: "block" }}
-                data-ad-client="ca-pub-5067002529301261"
-                data-ad-slot="8333411625"
-              ></ins>
+              <GoogleAds
+                clientId="ca-pub-5067002529301261"
+                slotId="8333411625"
+                smw="125px"
+                smh="125px"
+                mdw="200px"
+                mdh="200px"
+                lgw="200px"
+                lgh="200px"
+              />
             )}
           </div>
           <div className="flex items-center justify-center col-start-1 lg:col-start-3 row-start-3 row-span-2 overflow-auto">
             {user.impactLevel > 1 && (
-              <ins
-                className="adsbygoogle w-full h-full max-w-[125px] max-h-[125px] md:max-w-[200px] md:max-h-[200px]"
-                style={{ display: "block" }}
-                data-ad-client="ca-pub-5067002529301261"
-                data-ad-slot="3081084945"
-              ></ins>
+              <GoogleAds
+                clientId="ca-pub-5067002529301261"
+                slotId="3081084945"
+                smw="125px"
+                smh="125px"
+                mdw="200px"
+                mdh="200px"
+                lgw="200px"
+                lgh="200px"
+              />
             )}
           </div>
         </div>
