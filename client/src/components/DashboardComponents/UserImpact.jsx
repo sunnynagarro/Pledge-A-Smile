@@ -4,10 +4,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { fetchUserTabsOpened } from "../../actions/tabsInfo";
 
 // icons
-import { FcDonate } from "react-icons/fc";
+import { FaHamburger } from "react-icons/fa";
 import { VscWindow } from "react-icons/vsc";
 import { BiDonateHeart } from "react-icons/bi";
-import { MdOutlineClose } from "react-icons/md";
+import { ImArrowUp } from "react-icons/im";
 
 function UserImpact({ userId }) {
   const modalRef = useRef();
@@ -47,35 +47,34 @@ function UserImpact({ userId }) {
     return (
       <div
         ref={modalRef}
-        className="bg-white z-50 p-3 drop-shadow-lg rounded-md absolute right-0 mt-2 table w-[250px] md:w-[400px]"
+        className="modal-container z-50 p-3 drop-shadow-lg rounded-md absolute right-0 mt-2 table w-[250px] md:w-[250px]"
       >
-        <button onClick={toggleModal}>
-          <MdOutlineClose fontSize={28} />
-        </button>
-        <h2 className="text-xl text-center">YOUR IMPACT</h2>
-        <p className="text-center">Impact you've made!</p>
-        <div className="mt-4 border border-slate-200 p-2 rounded-md">
-          <div className="flex space-x-3">
-            <BiDonateHeart
-              fontSize={38}
-              className="border border-black rounded-full p-1"
-            />
-            <p className="text-3xl">{Math.floor(tabsOpened / 15)}</p>
-          </div>
-          <p className="mt-1">Food plates you've donated!</p>
-        </div>
-        <div className="mt-4 border border-slate-200 p-2 rounded-md">
-          <div className="flex space-x-3">
-            <VscWindow
-              fontSize={38}
-              className="border border-black rounded-full p-1"
-            />
-            <p className="text-3xl">{tabsOpened}</p>
-          </div>
-          <p className="mt-1">Tabs you've opened</p>
-          <p className="mt-1">
+        <ImArrowUp className="top-arrow-right" />
+        <h2 className="modal-header text-l">Your Impact</h2>
+        <p className="modal-sub-title mt-1">
             We donate a plate of food for every 15 tabs you open
           </p>
+        <hr className="modal-horizontal-line"/>
+        <div className="mt-4">
+          <div className="modal-count flex space-x-3">
+            <BiDonateHeart
+              fontSize={32}
+              className="count-icon border rounded-full p-1"
+            />
+            <p className="count text-3xl">{Math.floor(tabsOpened / 15)}</p>
+          </div>
+          <p className="mt-1">Food plates you've donated</p>
+        </div>
+        <hr className="modal-horizontal-line"/>
+        <div className="mt-4">
+          <div className="modal-count flex space-x-3">
+            <VscWindow
+              fontSize={32}
+              className="count-icon border rounded-full p-1"
+            />
+            <p className="count text-3xl">{tabsOpened}</p>
+          </div>
+          <p className="mt-1">Tabs you've opened</p>
         </div>
       </div>
     );
@@ -84,11 +83,11 @@ function UserImpact({ userId }) {
   return (
     <div className="relative">
       <button
-        className="flex items-center space-x-1 p-2 rounded-full bg-white"
+        className="header-button user-impact flex items-center space-x-1 p-2 rounded-full bg-white"
         onClick={toggleModal}
       >
         <p className="text-lg">{Math.floor(tabsOpened / 15)}</p>
-        <FcDonate fontSize={28} />
+        <FaHamburger fontSize={28} />
       </button>
       {isModalOpen && ModalElement()}
     </div>

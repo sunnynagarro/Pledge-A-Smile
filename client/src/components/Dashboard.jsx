@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import { updateUserTabsOpened } from "../actions/tabsInfo";
 
 // icons
-import { FcGoogle, FcSettings } from "react-icons/fc";
-import { MdOutlineSearch } from "react-icons/md";
+import { FcGoogle } from "react-icons/fc";
+import { BsGear } from "react-icons/bs";
+import { BiSearch } from "react-icons/bi";
 
 // images
 import HeroBgImage from "../assets/hero-bg.jpg";
@@ -38,11 +39,23 @@ function Dashboard({ user }) {
   let now = new Date();
   let hour = now.getHours();
   if (hour < 12) {
-    greet = "Good Morning";
+    if (user.name) {
+      greet = "Good morning, " + user.name;
+    } else {
+      greet = "Good morning";
+    }
   } else if (hour >= 12 && hour <= 17) {
-    greet = "Good Afternoon";
+    if (user.name) {
+      greet = "Good afternoon, " + user.name;
+    } else {
+      greet = "Good afternoon";
+    }
   } else if (hour >= 17 && hour <= 24) {
-    greet = "Good Evening";
+    if (user.name) {
+      greet = "Good evening, " + user.name;
+    } else {
+      greet = "Good evening";
+    }
   }
 
   const handleSearch = (event) => {
@@ -62,32 +75,28 @@ function Dashboard({ user }) {
       }}
     >
       {/* Navbar */}
-      <nav className="p-2 flex justify-end items-center space-x-3">
-        <Invite referralId={user.referralId} />
-        <GlobalImpact />
-        <UserImpact userId={user._id} />
-        <Link to="/profile">
-          <button className="p-2 rounded-full bg-white">
-            <FcSettings fontSize={28} />
-          </button>
-        </Link>
+      <nav className="header-container p-2 flex items-center space-x-3">
+        <div class="left">
+          <Invite referralId={user.referralId} text="Invite Buddies" />
+        </div>
+        <div class="right">
+          <GlobalImpact />
+          <UserImpact userId={user._id} />
+        </div>
       </nav>
-      <div className="flex-1 flex flex-col mt-[80px] items-center text-white">
-        <div>
+      <div className="center-content flex-1 flex flex-col mt-[80px] items-center text-white">
+        <div class="branding">
           <img
             src={Logo}
             alt="finger tapping on a heart symbol"
-            className="w-[350px]"
+            className="w-[270px]"
           />
         </div>
 
-        <div className="mt-6 text-center max-w-[700px] w-full flex flex-col items-center">
-          <h1 className="text-4xl md:text-5xl font-bold break-all">
-            Hello, {user.name}
-          </h1>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4">{greet}.</h2>
+        <div className="text-center max-w-[700px] w-full flex flex-col items-center">
+          <h2 class="greeting">{greet}.</h2>
           <form
-            className="flex bg-slate-50 space-x-2 max-w-[500px] w-full drop-shadow-lg p-3 rounded-full mt-8"
+            className="flex bg-slate-50 space-x-2 max-w-[560px] w-full drop-shadow-lg p-2 rounded-full mt-4 search-container"
             onSubmit={handleSearch}
           >
             <FcGoogle fontSize={28} />
@@ -95,13 +104,14 @@ function Dashboard({ user }) {
               type="text"
               name="query"
               value={query}
+              autoComplete="off"
               onChange={(e) => setQuery(e.target.value)}
-              className="flex-1 bg-transparent outline-none text-black"
+              className="flex-1 bg-transparent outline-none text-black search-input"
               placeholder="Search"
               autoFocus
             />
-            <button type="submit">
-              <MdOutlineSearch fontSize={28} color="black" />
+            <button type="submit" class="search-icon">
+              <BiSearch fontSize={24} class="search-svg" />
             </button>
           </form>
         </div>
@@ -148,6 +158,13 @@ function Dashboard({ user }) {
           </div>
         </div>
       </div>
+      <nav className="footer-container p-2 flex items-center space-x-3">
+        <Link to="/profile">
+          <button className="settings p-2 rounded-full bg-white">
+            <BsGear fontSize={28} height="22" width="22" />
+          </button>
+        </Link>
+      </nav>
     </div>
   );
 }

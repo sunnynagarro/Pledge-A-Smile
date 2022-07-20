@@ -11,5 +11,234 @@
 body,
 input,
 button {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+.greeting {
+  font-size: 32px;
+  line-height: 1;
+}
+form.search-container {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  height: 44px;
+  padding: 0.33rem 0.5rem;
+}
+form.search-container:hover, form.search-container:focus-within {
+  background: white;
+}
+form.search-container:hover .search-input::placeholder, form.search-container:focus-within .search-input::placeholder {
+  color: #999;
+}
+form.search-container:hover .search-input {
+  color: #444;
+}
+.search-input {
+  color: white;
+}
+.search-input:hover, .search-input:focus {
+  color: #444;
+  background: white;
+}
+.search-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+.search-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+.search-input::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+.search-svg {
+  color: white;
+}
+.search-container:hover .search-icon .search-svg, .search-input:focus + .search-icon .search-svg {
+  color: #444;
+}
+.header-container {
+  justify-content: space-between;
+  padding: 0.7rem;
+}
+.header-container .right {
+  display: flex;
+}
+.header-container .right > div {
+  margin-left: 10px;
+}
+.header-button-container {
+  height: 36px;
+}
+.header-button {
+  background: transparent;
+  border: 1px solid white;
+  height: 36px;
+  color: white;
+}
+.user-impact svg {
+  width: 20px;
+  height: 20px;
+}
+.header-button p {
+  margin-right: 3px;
+}
+.invite-button {
+  padding: 0 10px;
+  font-size: 14px;
+}
+.invite-button svg {
+  width: 20px;
+  height: 20px;
+  display: inline;
+}
+.global-button {
+  padding: 10px 4px 10px 10px;
+}
+.settings {
+  background: transparent;
+  color: white;
+}
+.settings svg {
+  width: 22px;
+  height: 22px;
+}
+.modal-container {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #E7EDF1;
+  font-size: 14px;
+}
+.modal-header {
+  font-weight: 600;
+}
+.top-arrow-left {
+  position: absolute;
+  left: 12px;
+  top: -7px;
+  color: #E7EDF1;
+}
+.top-arrow-right {
+  position: absolute;
+  right: 12px;
+  top: -7px;
+  color: #E7EDF1;
+}
+.copy-link-container {
+  display: flex;
+  gap: 10px;
+}
+.copy-link-textbox {
+  border-radius: 5px;
+  height: 35px;
+  background-color: white;
+  font-size: 14px;
+}
+.green-button {
+  border-radius: 20px;
+  height: 35px;
+  white-space: nowrap;
+  background-color: #28af89;
+  font-size: 14px;
+}
+.green-button svg {
+  display: inline;
+  margin-right: 5px;
+}
+.custom-modal {
+  border-radius: 10px !important;
+}
+.invite-info {
+  margin-bottom: 20px;
+}
+.invite-info p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.modal-horizontal-line {
+  margin-top: 15px;
+  border-top: 1px solid #ccc;
+}
+.modal-count .count {
+  font-size: 22px;
+  color: #28af89;
+}
+.modal-count .count-icon {
+  background-color: #28af89;
+  color: white;
+}
+.modal-sub-title {
+  font-size: 13px;
+  color: #888;
+}
+.profile-page header {
+  box-shadow: 10px 10px 20px #eee;
+}
+main.container h2 {
+  color: #333;
+}
+.main-container-inner {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  color: #333;
+  font-size: 14px;
+}
+.profile-container {
+  display: flex;
+  gap: 20px;
+}
+.profile-container > div {
+  background-color: white;
+  border-radius: 10px;
+}
+.left-container {
+  width: 30%;
+}
+.center-container {
+  padding: 20px;
+  width: 25%;
+}
+.right-container {
+  padding: 20px;
+  width: 45%;
+}
+.profile-container .head-title {
+  text-align: center;
+  color: #444;
+  background-color: #eafaf5;
+  border-radius: 10px 10px 0 0;
+  padding: 20px;
+}
+.horizontal-divider {
+  margin: 20px 0;
+  border-top: 1px solid #eee;
+}
+.profile-body {
+  padding: 20px;
+  gap: 20px;
+}
+.profile-body .invite-container {
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+.profile-body .invite-container input {
+  background-color: #eee;
+  cursor: pointer;
+}
+.profile-footer-container {
+  margin-top: 20px;
+}
+.impact-skelaton {
+  background-color: #eee;
+  border: 1px solid white;
+}
+
+@media only screen and (max-width: 1200px) {
+  .center-content {
+    margin-top: 0;
+  }
 }

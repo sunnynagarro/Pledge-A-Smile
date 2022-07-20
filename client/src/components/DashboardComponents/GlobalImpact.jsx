@@ -7,7 +7,7 @@ import { fetchGlobalTabsOpened } from "../../actions/tabsInfo";
 import { FcGlobe } from "react-icons/fc";
 import { VscWindow } from "react-icons/vsc";
 import { BiDonateHeart } from "react-icons/bi";
-import { MdOutlineClose } from "react-icons/md";
+import { ImArrowUp } from "react-icons/im";
 
 function GlobalImpact() {
   const modalRef = useRef();
@@ -48,30 +48,32 @@ function GlobalImpact() {
     return (
       <div
         ref={modalRef}
-        className="bg-white z-50 p-3 drop-shadow-lg rounded-md absolute right-0 mt-2 table md:w-[400px]"
+        className="modal-container z-50 p-3 drop-shadow-lg rounded-md absolute right-0 mt-2 table md:w-[250px]"
       >
-        <button onClick={toggleModal}>
-          <MdOutlineClose fontSize={28} />
-        </button>
-        <h2 className="text-xl text-center">OUR IMPACT</h2>
-        <p className="text-center">Impact we've made together!</p>
-        <div className="mt-4 border border-slate-200 p-2 rounded-md">
-          <div className="flex space-x-3">
+        <ImArrowUp className="top-arrow-right" />
+        <h2 className="modal-header text-l">Our Impact</h2>
+        <p className="modal-sub-title mt-1">
+            This is the power of the many!
+          </p>
+        <hr className="modal-horizontal-line"/>
+        <div className="mt-4">
+          <div className="modal-count flex space-x-3">
             <BiDonateHeart
-              fontSize={38}
-              className="border border-black rounded-full p-1"
+              fontSize={32}
+              className="count-icon border rounded-full p-1"
             />
-            <p className="text-3xl">{Math.floor(tabsOpened / 15)}</p>
+            <p className="count text-3xl">{Math.floor(tabsOpened / 15)}</p>
           </div>
-          <p className="mt-1">Food plates we've donated together!</p>
+          <p className="mt-1">Food plates we've donated together</p>
         </div>
-        <div className="mt-4 border border-slate-200 p-2 rounded-md">
-          <div className="flex space-x-3">
+        <hr className="modal-horizontal-line"/>
+        <div className="mt-4">
+          <div className="modal-count flex space-x-3">
             <VscWindow
-              fontSize={38}
-              className="border border-black rounded-full p-1"
+              fontSize={32}
+              className="count-icon border rounded-full p-1"
             />
-            <p className="text-3xl">{tabsOpened}</p>
+            <p className="count text-3xl">{tabsOpened}</p>
           </div>
           <p className="mt-1">Tabs we've opened together</p>
         </div>
@@ -81,7 +83,7 @@ function GlobalImpact() {
   return (
     <div className="relative">
       <button
-        className="flex items-center space-x-1 p-2 rounded-full bg-white"
+        className="header-button global-button flex items-center space-x-1 p-2 rounded-full bg-white"
         onClick={toggleModal}
       >
         <p className="text-lg">{Math.floor(tabsOpened / 15)}</p>
