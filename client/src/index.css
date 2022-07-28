@@ -78,6 +78,13 @@ form.search-container:hover .search-input {
   height: 36px;
   color: white;
 }
+.header-quick-links-icon {
+  border: none;
+  color: #ddd;
+}
+.header-quick-links-icon:hover {
+  color: #fff;
+}
 .user-impact svg {
   width: 20px;
   height: 20px;
@@ -119,12 +126,17 @@ form.search-container:hover .search-input {
   left: 12px;
   top: -7px;
   color: #E7EDF1;
+  font-size: 14px;
 }
 .top-arrow-right {
   position: absolute;
   right: 12px;
   top: -7px;
   color: #E7EDF1;
+  font-size: 14px;
+}
+.static-quick-links .top-arrow-right {
+  color: white;
 }
 .copy-link-container {
   display: flex;
@@ -241,4 +253,74 @@ main.container h2 {
   .center-content {
     margin-top: 0;
   }
+}
+.static-quick-links {
+  position: absolute;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  right: 0;
+  top: 42px;
+  z-index: 99;
+  font-size: 13px;
+  color: #333;
+}
+
+.static-quick-links nav {
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  width: 110px;
+}
+
+.static-quick-links .view-container {
+  padding: 20px;
+}
+
+.view-container .apps-grid-list {
+  display: flex;
+  width: 250px;
+  flex-wrap: wrap;
+}
+
+.view-container .apps-grid-list .apps-list-item {
+  flex: 32%;
+  height: 100px;
+  position: relative;
+}
+
+.view-container .apps-grid-list .apps-list-item > a {
+  width: 100%;
+  padding: 8px 2px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 5px;
+}
+
+.view-container .apps-grid-list .apps-list-item > a:hover {
+  background-color: #eee;
+}
+
+.view-container .apps-grid-list .apps-list-item .apps-anchor-image {
+  width: 45px;
+}
+
+.static-quick-links .nav .nav-item {
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 5px;
+  color: #555;
+  border-bottom: 2px solid white;
+}
+
+.static-quick-links .nav .nav-item:hover {
+  color: #888;
+}
+
+.static-quick-links .nav .nav-item.active {
+  color: #28af89;
+  border-bottom: 2px solid #28af89;
 }

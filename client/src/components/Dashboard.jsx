@@ -20,6 +20,7 @@ import Invite from "./DashboardComponents/Invite";
 import GlobalImpact from "./DashboardComponents/GlobalImpact";
 import UserImpact from "./DashboardComponents/UserImpact";
 import GoogleAds from "./GoogleAds";
+import QuickLinks from "./DashboardComponents/QuickLinks";
 
 function Dashboard({ user }) {
   useEffect(() => {
@@ -82,6 +83,7 @@ function Dashboard({ user }) {
         <div class="right">
           <GlobalImpact />
           <UserImpact userId={user._id} />
+          <QuickLinks />
         </div>
       </nav>
       <div className="center-content flex-1 flex flex-col mt-[80px] items-center text-white">
