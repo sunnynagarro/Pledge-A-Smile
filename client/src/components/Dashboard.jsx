@@ -9,9 +9,6 @@ import { FcGoogle } from "react-icons/fc";
 import { BsGear } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 
-// images
-import HeroBgImage from "../assets/hero-bg.jpg";
-
 // logo
 import Logo from "../assets/logo-dashboard.png";
 
@@ -22,7 +19,47 @@ import UserImpact from "./DashboardComponents/UserImpact";
 import GoogleAds from "./GoogleAds";
 import QuickLinks from "./DashboardComponents/QuickLinks";
 
+var images = [
+  {
+    id: 1,
+    url: require("../assets/hero-bg.jpg"),
+    date: new Date().toDateString()
+  },
+  {
+    id: 2,
+    url: require("../assets/hero-bg-2.jpeg"),
+    date: new Date().toDateString()
+  }
+];
+
+function setCurrentBGImage() {
+  var storedImage = localStorage.getItem('bg-image');
+  if (storedImage != null) {
+    var bgImage = JSON.parse(storedImage);
+    var currentDate = new Date(new Date().toDateString());
+    if (new Date(bgImage.date) < currentDate) {
+      var nextImageId = (bgImage.id % images.length) + 1;
+      images.forEach((img) => {
+        if (img.id === nextImageId) {
+          localStorage.setItem('bg-image', JSON.stringify(img));
+          HeroBgImage = img.url;
+        }
+      });
+    } else {
+      HeroBgImage = bgImage.url;
+    }
+  } else {
+    localStorage.setItem('bg-image', JSON.stringify(images[0]));
+    HeroBgImage = images[0].url;
+  }
+  if (HeroBgImage === null || HeroBgImage === undefined) {
+    HeroBgImage = images[0].url;
+  }
+}
+
+var HeroBgImage;
 function Dashboard({ user }) {
+  setCurrentBGImage();
   useEffect(() => {
     if (
       !window.performance
