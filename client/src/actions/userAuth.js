@@ -1,4 +1,4 @@
-let API_URL = "http://localhost:3001/auth";
+let API_URL = "https://tab.pledgeasmile.com/backend/auth";
 
 export const emailLogin = async (reqBody) => {
   let response = await fetch(API_URL + "/emailLogin", {

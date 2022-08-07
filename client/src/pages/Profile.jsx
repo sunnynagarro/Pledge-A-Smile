@@ -54,7 +54,7 @@ function Profile() {
     });
   };
   const referralLink =
-    "http://localhost:3000/login?referralId=" + user.referralId;
+    "https://tab.pledgeasmile.com/login?referralId=" + user.referralId;
 
   const copyReferralLink = () => {
     navigator.clipboard.writeText(referralLink);
@@ -84,13 +84,16 @@ function Profile() {
     <div className="profile-page">
       <header className="border-b-2 border-gray">
         <nav className="flex items-center justify-between space-x-2 container mx-auto py-2 px-1">
-          <Link to="/">
-            <img
-              src={Logo}
-              alt="Pledge a smile"
-              className="max-w-[150px] md:max-w-[200px]"
-            />
-          </Link>
+          <div className="flex">
+            <Link to="/">
+              <img
+                src={Logo}
+                alt="Pledge a smile"
+                className="max-w-[150px] md:max-w-[200px]"
+              />
+            </Link>
+            <Link className="m-auto ml-10" to="/">Home</Link>
+          </div>
           <button
             className="green-button px-4 bg-slate-800 text-white rounded-sm"
             onClick={logoutUser}

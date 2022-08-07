@@ -1,4 +1,4 @@
-let API_URL = "http://localhost:3001/api";
+let API_URL = "https://tab.pledgeasmile.com/backend/api";
 
 export const updateUserTabsOpened = async (userId) => {
   let response = await fetch(API_URL + "/tabsInfo/updateUserTabs", {

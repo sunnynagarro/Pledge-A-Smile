@@ -145,9 +145,9 @@ function QuickLinks() {
             imgUrl: require('../../assets/quick-links-icons/IMDb.png'),
         },
         {
-            text: 'Rotten Tomatoes',
-            link: 'https://www.rottentomatoes.com',
-            imgUrl: require('../../assets/quick-links-icons/RottenTomatoes.png'),
+            text: 'SonyLIV',
+            link: 'https://www.sonyliv.com',
+            imgUrl: require('../../assets/quick-links-icons/Sonyliv.png'),
         },
         {
             text: 'Twitch',
@@ -180,9 +180,9 @@ function QuickLinks() {
             imgUrl: require('../../assets/quick-links-icons/Disney.png'),
         },
         {
-            text: 'VIU',
-            link: 'https://www.viu.com',
-            imgUrl: require('../../assets/quick-links-icons/Viu.png'),
+            text: 'Voot',
+            link: 'https://www.voot.com',
+            imgUrl: require('../../assets/quick-links-icons/Voot.png'),
         },
         {
             text: 'Spotify',
@@ -207,19 +207,9 @@ function QuickLinks() {
             imgUrl: require('../../assets/quick-links-icons/Whatsapp.png'),
         },
         {
-            text: 'WeChat',
-            link: 'https://www.wechat.com',
-            imgUrl: require('../../assets/quick-links-icons/Wechat.png'),
-        },
-        {
             text: 'Instagram',
             link: 'https://instagram.com',
             imgUrl: require('../../assets/quick-links-icons/Instagram.png'),
-        },
-        {
-            text: 'Line',
-            link: 'https://timeline.line.me',
-            imgUrl: require('../../assets/quick-links-icons/Line.png'),
         },
         {
             text: 'Pinterest',
@@ -230,11 +220,6 @@ function QuickLinks() {
             text: 'Discord',
             link: 'https://discord.com',
             imgUrl: require('../../assets/quick-links-icons/Discord.png'),
-        },
-        {
-            text: 'TikTok',
-            link: 'https://www.tiktok.com',
-            imgUrl: require('../../assets/quick-links-icons/Tiktok.png'),
         },
         {
             text: 'Twitter',
@@ -255,6 +240,21 @@ function QuickLinks() {
             text: 'LinkedIn',
             link: 'https://www.linkedin.com',
             imgUrl: require('../../assets/quick-links-icons/Linkedin.png'),
+        },
+        {
+            text: 'TikTok',
+            link: 'https://www.tiktok.com',
+            imgUrl: require('../../assets/quick-links-icons/Tiktok.png'),
+        },
+        {
+            text: 'WeChat',
+            link: 'https://www.wechat.com',
+            imgUrl: require('../../assets/quick-links-icons/Wechat.png'),
+        },
+        {
+            text: 'Line',
+            link: 'https://timeline.line.me',
+            imgUrl: require('../../assets/quick-links-icons/Line.png'),
         },
     ];
 

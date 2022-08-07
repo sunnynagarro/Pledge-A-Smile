@@ -9,7 +9,7 @@ import { FiCopy } from "react-icons/fi";
 function Invite({ referralId, text }) {
   const modalRef = useRef();
   const [isInviteModalOpen, setIsInviteModalOpen] = useState(false);
-  const referralLink = "http://localhost:3000/login?referralId=" + referralId;
+  const referralLink = "https://tab.pledgeasmile.com/login?referralId=" + referralId;
   const copyLink = () => {
     navigator.clipboard.writeText(referralLink);
     toast.success("Copied to clipboard");
