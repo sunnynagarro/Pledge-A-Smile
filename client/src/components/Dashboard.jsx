@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import GuideChimp from 'guidechimp';
 
 // api actions
 import { updateUserTabsOpened } from "../actions/tabsInfo";
@@ -13,7 +14,7 @@ import { BiSearch } from "react-icons/bi";
 import Logo from "../assets/logo-dashboard.png";
 
 // components
-import Invite from "./DashboardComponents/Invite";
+// import Invite from "./DashboardComponents/Invite";
 import GlobalImpact from "./DashboardComponents/GlobalImpact";
 import UserImpact from "./DashboardComponents/UserImpact";
 import GoogleAds from "./GoogleAds";
@@ -27,10 +28,59 @@ var images = [
   },
   {
     id: 2,
-    url: require("../assets/hero-bg-2.jpeg"),
+    url: require("../assets/hero-bg-3.webp"),
     date: new Date().toDateString()
   }
 ];
+
+let tour = [
+  {
+    element: '#search',
+    title: 'Search Google',
+    description: 'Search the world\'s information, including webpages, images, videos and more. Google has many special features to help you find exactly what you\'re looking for.',
+    position: 'bottom'
+  },
+  {
+    element: '#globalImpact',
+    title: 'Global Impact',
+    description: 'See global impact that all of us are making, because the right to food is a human right.',
+    position: 'left'
+  },
+  {
+    element: '#userImpact',
+    title: 'User Impact',
+    description: 'You can see how many tabs you have opened so far and what impact you have made.',
+    position: 'bottom'
+  },
+  {
+    element: '#quickLinks',
+    title: 'Quick Links',
+    description: 'Most of your favourite apps are here for easy access.',
+    position: 'bottom'
+  },
+  {
+    element: '#profileLink',
+    title: 'Profile',
+    description: 'You can see your basic information and can increase your overall impact within your profile.',
+    position: 'top'
+  },
+];
+
+let options = {
+  exitOverlay: false,
+  interaction: false
+};
+
+function callGuide() {
+  var guideStorage = localStorage.getItem('seenGuide');
+  if (guideStorage === null) {
+    setTimeout(() => {
+      var guideChimp = GuideChimp(tour, options);
+      guideChimp.start();
+    }, 500);
+    localStorage.setItem('seenGuide', true);
+  }
+}
 
 function setCurrentBGImage() {
   var storedImage = localStorage.getItem('bg-image');
@@ -59,6 +109,7 @@ function setCurrentBGImage() {
 
 var HeroBgImage;
 function Dashboard({ user }) {
+  callGuide();
   setCurrentBGImage();
   useEffect(() => {
     if (
@@ -105,7 +156,7 @@ function Dashboard({ user }) {
   };
   return (
     <div
-      className="min-h-[100vh] flex flex-col"
+      className="main-container h-[100vh] flex flex-col"
       style={{
         background: `url(${HeroBgImage})`,
         backgroundSize: "cover",
@@ -115,7 +166,7 @@ function Dashboard({ user }) {
       {/* Navbar */}
       <nav className="header-container p-2 flex items-center space-x-3">
         <div class="left">
-          <Invite referralId={user.referralId} text="Invite Buddies" />
+          {/* <Invite referralId={user.referralId} text="Invite Buddies" /> */}
         </div>
         <div class="right">
           <GlobalImpact />
@@ -135,6 +186,7 @@ function Dashboard({ user }) {
         <div className="text-center max-w-[700px] w-full flex flex-col items-center">
           <h2 class="greeting">{greet}.</h2>
           <form
+            id="search"
             className="flex bg-slate-50 space-x-2 max-w-[560px] w-full drop-shadow-lg p-2 rounded-full mt-4 search-container"
             onSubmit={handleSearch}
           >
@@ -198,7 +250,7 @@ function Dashboard({ user }) {
         </div>
       </div>
       <nav className="footer-container p-2 flex items-center space-x-3">
-        <Link to="/profile">
+        <Link id="profileLink" to="/profile">
           <button className="settings p-2 rounded-full bg-white">
             <BsGear fontSize={28} height="22" width="22" />
           </button>

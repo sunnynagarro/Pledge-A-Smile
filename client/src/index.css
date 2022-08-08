@@ -14,6 +14,13 @@ button {
   font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
 }
 
+body {
+  overflow: hidden;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
 .greeting {
   font-size: 32px;
   line-height: 1;
@@ -120,6 +127,7 @@ form.search-container:hover .search-input {
 }
 .modal-header {
   font-weight: 600;
+  font-size: 15px;
 }
 .top-arrow-left {
   position: absolute;
@@ -190,6 +198,13 @@ form.search-container:hover .search-input {
 }
 main.container h2 {
   color: #333;
+}
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 auto;
 }
 .main-container-inner {
   margin: 20px 0;
@@ -323,4 +338,43 @@ main.container h2 {
 .static-quick-links .nav .nav-item.active {
   color: #28af89;
   border-bottom: 2px solid #28af89;
+}
+.gc-copyright {
+  display: none;
+}
+
+.gc-tooltip {
+  border-radius: 15px;
+  max-width: 300px;
+}
+
+.gc-tooltip[data-guidechimp-position=bottom] .gc-progressbar {
+  border-radius: 0 0 0 15px;
+  left: 5px;
+  background-color: #28AF89;
+}
+
+.gc-progressbar {
+  left: 4px;
+  background-color: #28AF89;
+  border-radius: 15px 0 0 0;
+}
+
+.gc-progressbar[aria-valuenow="100"] {
+  border-radius: 15px 15px 0 0;
+  width: 97.5% !important;
+  left: 4px;
+  background-color: #28AF89;
+}
+
+.gc-pagination-theme-circles .gc-pagination-item.gc-pagination-active, .gc-pagination-theme-circles .gc-pagination-item:hover {
+  background-color: #28AF89;
+}
+
+.gc-navigation-prev:hover, .gc-navigation-next:hover {
+  border-color: #28AF89;
+}
+
+.gc-overlay {
+  opacity: 0.6;
 }

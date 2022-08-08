@@ -53,13 +53,13 @@ function Profile() {
       type: "LOGOUT",
     });
   };
-  const referralLink =
-    "https://tab.pledgeasmile.com/login?referralId=" + user.referralId;
+  // const referralLink =
+  //   "https://tab.pledgeasmile.com/login?referralId=" + user.referralId;
 
-  const copyReferralLink = () => {
-    navigator.clipboard.writeText(referralLink);
-    toast.success("Link copied to clipboard");
-  };
+  // const copyReferralLink = () => {
+  //   navigator.clipboard.writeText(referralLink);
+  //   toast.success("Link copied to clipboard");
+  // };
 
   const changeImpactLevel = async (event) => {
     let level = event.target.value;
@@ -114,7 +114,7 @@ function Profile() {
                 <p className="email">{user.email}</p>
               </div>
               <div className="profile-body">
-                <div className="invite-friends">
+                {/* <div className="invite-friends">
                   <div>
                     Invite Your Friends
                   </div>
@@ -126,14 +126,14 @@ function Profile() {
                       onClick={copyReferralLink}
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="center-container">
               <div>
-                <h2 className="text-l font-bold">Your Impact</h2>
+                <h2 className="text-l font-bold">YOUR IMPACT</h2>
                 <p className="modal-sub-title mt-1">
-                  We donate a plate of food for every 15 tabs you open
+                  We donate a plate of food for every 15 tabs you open!
                 </p>
                 <hr className="modal-horizontal-line" />
                 <div>
@@ -145,7 +145,7 @@ function Profile() {
                       />
                       <p className="count text-3xl">{Math.floor(tabsOpened / 15)}</p>
                     </div>
-                    <p className="mt-1">Food plates you've donated</p>
+                    <p className="mt-1">Food Plates you have donated.</p>
                   </div>
                   <div className="mt-4">
                     <div className="modal-count flex space-x-3">
@@ -155,7 +155,7 @@ function Profile() {
                       />
                       <p className="count text-3xl">{tabsOpened}</p>
                     </div>
-                    <p className="mt-1">Tabs you've opened</p>
+                    <p className="mt-1">Tabs you have opened.</p>
                   </div>
                 </div>
               </div>
@@ -163,11 +163,10 @@ function Profile() {
             <div className="right-container">
               <div>
                 <h2 className="text-l font-bold mb-1">
-                  Upgrade Your Impact
+                  UPGRADE YOUR IMPACT
                 </h2>
                 <p className="modal-sub-title">
-                  You can upgrade your impact by increasing the number of ads you
-                  see
+                  You can upgrade your impact by increasing the number of Ads you see!
                 </p>
                 <hr className="modal-horizontal-line" />
                 <div className="flex flex-col justify-center items-center mt-8 space-y-6 md:space-y-0 md:space-x-5 md:flex-row">
@@ -230,31 +229,31 @@ function Profile() {
           <footer>
             <div className="profile-footer-container mx-auto md:flex md:justify-between md:items-center">
               <nav className="flex flex-col space-y-3 text-center md:flex-row md:space-y-0 md:space-x-3 md:text-left">
-                <Link to="/about">About</Link>
-                <Link to="/blog">Blog</Link>
-                <Link to="/contact">Contact</Link>
-                <Link to="/privacy">Privacy</Link>
-                <Link to="/terms">Terms</Link>
+                <a href="https://pledgeasmile.com/about-us/">About</a>
+                <a href="https://pledgeasmile.com/blogs/">Blog</a>
+                <a href="https://pledgeasmile.com/contact-us/">Contact</a>
+                <a href="https://pledgeasmile.com/privacy-policy/">Privacy</a>
+                <a href="https://pledgeasmile.com/terms/">Terms</a>
               </nav>
               <div className="flex mt-3 justify-center items-center space-x-3 md:mt-0">
-                <Link to="/linkedin">
+                <a href="https://www.linkedin.com/company/pledgeasmile">
                   <FaLinkedin fontSize={18} />
-                </Link>
-                <Link to="/youtube">
+                </a>
+                <a href="https://www.youtube.com/channel/UCmLSW6cTLxpIvLRg-D_ekUw">
                   <FaYoutube fontSize={18} />
-                </Link>
-                <Link to="/twitter">
+                </a>
+                <a href="https://twitter.com/pledgeasmile">
                   <FaTwitter fontSize={18} />
-                </Link>
-                <Link to="/google">
+                </a>
+                <a href="https://g.page/pledge-a-smile-foundation?share">
                   <FaGoogle fontSize={18} />
-                </Link>
-                <Link to="/facebook">
+                </a>
+                <a href="https://www.facebook.com/pledgeasmile/">
                   <FaFacebook fontSize={18} />
-                </Link>
-                <Link to="/instagram">
+                </a>
+                <a href="https://www.instagram.com/pledgeasmile/">
                   <FaInstagram fontSize={18} />
-                </Link>
+                </a>
               </div>
             </div>
           </footer>

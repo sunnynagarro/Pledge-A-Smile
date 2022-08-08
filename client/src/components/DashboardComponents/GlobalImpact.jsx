@@ -51,9 +51,9 @@ function GlobalImpact() {
         className="modal-container z-50 p-3 drop-shadow-lg rounded-md absolute right-0 mt-2 table md:w-[250px]"
       >
         <ImArrowUp className="top-arrow-right" />
-        <h2 className="modal-header text-l">Our Impact</h2>
+        <h2 className="modal-header text-l">OUR IMPACT</h2>
         <p className="modal-sub-title mt-1">
-            This is the power of the many!
+            This is the power of many!
           </p>
         <hr className="modal-horizontal-line"/>
         <div className="mt-4">
@@ -64,7 +64,7 @@ function GlobalImpact() {
             />
             <p className="count text-3xl">{Math.floor(tabsOpened / 15)}</p>
           </div>
-          <p className="mt-1">Food plates we've donated together</p>
+          <p className="mt-1">Food Plates we have donated together.</p>
         </div>
         <hr className="modal-horizontal-line"/>
         <div className="mt-4">
@@ -75,13 +75,13 @@ function GlobalImpact() {
             />
             <p className="count text-3xl">{tabsOpened}</p>
           </div>
-          <p className="mt-1">Tabs we've opened together</p>
+          <p className="mt-1">Tabs we have opened so far.</p>
         </div>
       </div>
     );
   };
   return (
-    <div className="relative">
+    <div id="globalImpact" className="relative">
       <button
         className="header-button global-button flex items-center space-x-1 p-2 rounded-full bg-white"
         onClick={toggleModal}

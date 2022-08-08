@@ -385,7 +385,7 @@ function QuickLinks() {
         );
     };
 
-    return <div className="relative">
+    return <div id="quickLinks" className="relative">
         <button
             className="header-button header-quick-links-icon flex items-center space-x-1 rounded-full bg-white"
             onClick={toggleModal}

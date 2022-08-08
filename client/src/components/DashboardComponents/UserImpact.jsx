@@ -50,7 +50,7 @@ function UserImpact({ userId }) {
         className="modal-container z-50 p-3 drop-shadow-lg rounded-md absolute right-0 mt-2 table w-[250px] md:w-[250px]"
       >
         <ImArrowUp className="top-arrow-right" />
-        <h2 className="modal-header text-l">Your Impact</h2>
+        <h2 className="modal-header text-l">YOUR IMPACT</h2>
         <p className="modal-sub-title mt-1">
             We donate a plate of food for every 15 tabs you open
           </p>
@@ -63,7 +63,7 @@ function UserImpact({ userId }) {
             />
             <p className="count text-3xl">{Math.floor(tabsOpened / 15)}</p>
           </div>
-          <p className="mt-1">Food plates you've donated</p>
+          <p className="mt-1">Food Plates you have donated.</p>
         </div>
         <hr className="modal-horizontal-line"/>
         <div className="mt-4">
@@ -74,14 +74,14 @@ function UserImpact({ userId }) {
             />
             <p className="count text-3xl">{tabsOpened}</p>
           </div>
-          <p className="mt-1">Tabs you've opened</p>
+          <p className="mt-1">Tabs you have opened so far.</p>
         </div>
       </div>
     );
   };
 
   return (
-    <div className="relative">
+    <div id="userImpact" className="relative">
       <button
         className="header-button user-impact flex items-center space-x-1 p-2 rounded-full bg-white"
         onClick={toggleModal}
