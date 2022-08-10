@@ -61,6 +61,10 @@ function Profile() {
   //   toast.success("Link copied to clipboard");
   // };
 
+  const capitalizeFirst = str => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   const changeImpactLevel = async (event) => {
     let level = event.target.value;
     dispatch({
@@ -110,7 +114,7 @@ function Profile() {
           <div className="profile-container">
             <div className="left-container">
               <div className="head-title">
-                <p className="name font-bold">{user.name}</p>
+                <p className="name font-bold">{capitalizeFirst(user.name)}</p>
                 <p className="email">{user.email}</p>
               </div>
               <div className="profile-body">
