@@ -394,7 +394,7 @@ function Dashboard({ user }) {
     event.preventDefault();
     if (query.trim() === "") return;
     let url = "https://www.google.com/search?q=" + query;
-    window.open(url, "_blank");
+    window.open(url, "_self");
     setQuery("");
   };
   return (
