@@ -267,7 +267,33 @@ const capitalizeFirst = str => {
 };
 
 var HeroBgImage;
+var timerIsSet = false;
 function Dashboard({ user }) {
+
+  const getCurrentTime = () => {
+    let date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+  }
+
+  var defaultSwitchLogo = localStorage.getItem('switchLogo') === 'true';
+  const [switchLogo, setSwitchLogo] = useState(defaultSwitchLogo);
+  const [cTime, setTime] = useState(getCurrentTime());
+
+  useEffect(() => {
+    if (switchLogo && !timerIsSet) {
+      setInterval(() => {
+        setTime(getCurrentTime());
+      }, 1000);
+      timerIsSet = true;
+    }
+  });
   // const [hasHiddenAds, setHasHiddenAds] = useState(false);
 
   // function addMinutes(date, minutes) {
@@ -345,50 +371,55 @@ function Dashboard({ user }) {
 
   // const getAdsHtml = () => {
   //   return (
-      // <div hidden={hasHiddenAds} className="advertisements-conatiner flex-1 grid grid-cols-1 lg:grid-cols-[1fr_1fr_400px] grid-rows-5 w-full mt-2">
-      //   <div onClick={hideAds} hidden={hasHiddenAds} className="rectangle-advertisement flex items-center justify-center col-start-1 lg:col-start-2 row-start-5 overflow-hidden">
-      //     <GoogleAds
-      //       clientId="ca-app-pub-3940256099942544"
-      //       slotId="2934735716"
-      //       smw="234px"
-      //       smh="60px"
-      //       mdw="468px"
-      //       mdh="60px"
-      //       lgw="720px"
-      //       lgh="90px"
-      //     />
-      //   </div>
-      //   <div onClick={hideAds} hidden={hasHiddenAds} className="square-advertisement flex items-center justify-center col-start-1 lg:col-start-3 row-start-2 row-span-2 overflow-auto">
-      //     {user.impactLevel > 2 && (
-      //       <GoogleAds
-      //         clientId="ca-app-pub-3940256099942544"
-      //         slotId="3419835294"
-      //         smw="125px"
-      //         smh="125px"
-      //         mdw="200px"
-      //         mdh="200px"
-      //         lgw="200px"
-      //         lgh="200px"
-      //       />
-      //     )}
-      //   </div>
-      //   <div onClick={hideAds} hidden={hasHiddenAds} className="square-advertisement flex items-center justify-center col-start-1 lg:col-start-3 row-start-4 row-span-2 overflow-auto">
-      //     {user.impactLevel > 1 && (
-      //       <GoogleAds
-      //         clientId="ca-app-pub-3940256099942544"
-      //         slotId="6300978111"
-      //         smw="125px"
-      //         smh="125px"
-      //         mdw="200px"
-      //         mdh="200px"
-      //         lgw="200px"
-      //         lgh="200px"
-      //       />
-      //     )}
-      //   </div>
-      // </div>
+  // <div hidden={hasHiddenAds} className="advertisements-conatiner flex-1 grid grid-cols-1 lg:grid-cols-[1fr_1fr_400px] grid-rows-5 w-full mt-2">
+  //   <div onClick={hideAds} hidden={hasHiddenAds} className="rectangle-advertisement flex items-center justify-center col-start-1 lg:col-start-2 row-start-5 overflow-hidden">
+  //     <GoogleAds
+  //       clientId="ca-app-pub-3940256099942544"
+  //       slotId="2934735716"
+  //       smw="234px"
+  //       smh="60px"
+  //       mdw="468px"
+  //       mdh="60px"
+  //       lgw="720px"
+  //       lgh="90px"
+  //     />
+  //   </div>
+  //   <div onClick={hideAds} hidden={hasHiddenAds} className="square-advertisement flex items-center justify-center col-start-1 lg:col-start-3 row-start-2 row-span-2 overflow-auto">
+  //     {user.impactLevel > 2 && (
+  //       <GoogleAds
+  //         clientId="ca-app-pub-3940256099942544"
+  //         slotId="3419835294"
+  //         smw="125px"
+  //         smh="125px"
+  //         mdw="200px"
+  //         mdh="200px"
+  //         lgw="200px"
+  //         lgh="200px"
+  //       />
+  //     )}
+  //   </div>
+  //   <div onClick={hideAds} hidden={hasHiddenAds} className="square-advertisement flex items-center justify-center col-start-1 lg:col-start-3 row-start-4 row-span-2 overflow-auto">
+  //     {user.impactLevel > 1 && (
+  //       <GoogleAds
+  //         clientId="ca-app-pub-3940256099942544"
+  //         slotId="6300978111"
+  //         smw="125px"
+  //         smh="125px"
+  //         mdw="200px"
+  //         mdh="200px"
+  //         lgw="200px"
+  //         lgh="200px"
+  //       />
+  //     )}
+  //   </div>
+  // </div>
   //   );
   // };
+
+  const onSwitchLogo = () => {
+    localStorage.setItem('switchLogo', !switchLogo);
+    setSwitchLogo(!switchLogo);
+  }
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -418,12 +449,24 @@ function Dashboard({ user }) {
         </div>
       </nav>
       <div className="center-content flex-1 flex flex-col mt-[80px] items-center text-white">
-        <div className="branding">
-          <img
-            src={Logo}
-            alt="finger tapping on a heart symbol"
-            className="w-[270px]"
-          />
+        <div className="flex logo-container">
+          <div className="left"></div>
+          <div className="branding">
+            <img
+              className="logo"
+              hidden={switchLogo}
+              src={Logo}
+              alt="finger tapping on a heart symbol"
+            />
+            <div 
+              className="timer"
+              hidden={!switchLogo}>
+              {cTime}
+            </div>
+          </div>
+          <div className="right">
+            <img onClick={onSwitchLogo} src={require('../assets/loop.png')} alt="Switch between time and logo" />
+          </div>
         </div>
 
         <div className="text-center max-w-[700px] w-full flex flex-col items-center">

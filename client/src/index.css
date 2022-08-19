@@ -397,3 +397,37 @@ main.container h2 {
 [hidden]{
   display:none;
 }
+.logo-container {
+  margin-bottom: 10px;
+  width: 50%;
+  min-width: 500px;
+}
+.logo-container:hover .right img {
+  display: inline;
+}
+.logo-container .left, .logo-container .right {
+  flex: 1 0 50px;
+  display: inline-flex;
+  align-items: center;
+}
+.logo-container .right {
+  padding-left: 20px;
+}
+.logo-container .right img {
+  display: none;
+  width: 25px;
+  cursor: pointer;
+}
+.logo-container .branding {
+  width: 300px;
+}
+.logo-container .branding img {
+  padding: 0 10px;
+  margin: auto;
+  height: 95px;
+}
+.logo-container .branding .timer {
+  text-align: center;
+  font-size: 68px;
+  height: 95px;
+}
