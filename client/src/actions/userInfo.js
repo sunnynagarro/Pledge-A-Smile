@@ -1,4 +1,4 @@
-let API_URL = "https://tab.pledgeasmile.com/backend/api/userInfo";
+let API_URL = "http://localhost:3001/api/userInfo";
 
 export const updateImpactLevel = async (userId, level) => {
   let response = await fetch(API_URL + "/updateImpactLevel", {

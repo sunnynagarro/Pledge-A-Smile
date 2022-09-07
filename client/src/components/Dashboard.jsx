@@ -19,6 +19,7 @@ import GlobalImpact from "./DashboardComponents/GlobalImpact";
 import UserImpact from "./DashboardComponents/UserImpact";
 // import GoogleAds from "./GoogleAds";
 import QuickLinks from "./DashboardComponents/QuickLinks";
+import TabbingBuddies from "./DashboardComponents/MyBuddies/TabbingBuddies";
 
 var images = [
   {
@@ -239,7 +240,7 @@ function callGuide() {
 
 function setCurrentBGImage() {
   var storedImage = localStorage.getItem('bg-image');
-  if (storedImage != null) {
+  if (storedImage !== null && storedImage !== undefined) {
     var bgImage = JSON.parse(storedImage);
     var currentDate = new Date(new Date().toDateString());
     if (new Date(bgImage.date) < currentDate) {
@@ -440,6 +441,7 @@ function Dashboard({ user }) {
       {/* Navbar */}
       <nav className="header-container p-2 flex items-center space-x-3">
         <div className="left">
+          <TabbingBuddies/>
           {/* <Invite referralId={user.referralId} text="Invite Buddies" /> */}
         </div>
         <div className="right">

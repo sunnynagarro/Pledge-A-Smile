@@ -23,6 +23,7 @@ const errorHandler = require("./middlewares/errorHandler");
 app.use("/auth", require("./routes/auth/auth"));
 app.use("/api/tabsInfo", require("./routes/api/tabsInfo"));
 app.use("/api/userInfo", require("./routes/api/userInfo"));
+app.use("/api/groups", require("./routes/api/groups"));
 
 app.use(errorHandler);
 
