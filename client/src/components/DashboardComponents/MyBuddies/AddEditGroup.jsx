@@ -15,7 +15,7 @@ class AddEditGroup extends Component {
 
         this.state = {
             group: props.group,
-            newGroupName: props.group?.name,
+            newGroupName: props.group === null || props.group === undefined ? '' : props.group.name,
             currentUser: JSON.parse(localStorage.getItem("user")) || {},
             isEdit: props.isEdit === 'true' ? true : false
         }

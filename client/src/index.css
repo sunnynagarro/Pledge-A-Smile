@@ -617,3 +617,7 @@ main.container h2 {
 .invite-to-group-modal .modal-body .copy-link button {
   color: #28af89;
 }
+.groups-container {
+  max-height: 350px;
+  overflow-y: auto;
+}

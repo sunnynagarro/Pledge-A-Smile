@@ -41,9 +41,14 @@ const getUserGroups__GET = asyncHandler(async (req, res) => {
     let groupService = new GroupService();
     await groupService.createDefaultGroupsForUser(userId);
 
+    // Fetch all user memberships, no matter if the user created that group or not.
+    let uniqueGroupIds = await GroupMembership.find({userId: userId}).distinct('groupId').clone();
+
     // Get all groups for the user.
     var groups = await Group.find({
-        createdBy: userId
+        _id: {
+            $in: uniqueGroupIds
+        }
     });
 
     let userGroups = [];
