@@ -13,248 +13,248 @@ function QuickLinks() {
         {
             text: 'Gmail',
             link: 'https://mail.google.com',
-            imgUrl: require('../../assets/quick-links-icons/Gmail.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Gmail.png'),
         },
         {
             text: 'Drive',
             link: 'https://drive.google.com',
-            imgUrl: require('../../assets/quick-links-icons/Drive.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Drive.png'),
         },
         {
             text: 'Calendar',
             link: 'https://calendar.google.com',
-            imgUrl: require('../../assets/quick-links-icons/Calendar.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Calendar.png'),
         },
         {
             text: 'Docs',
             link: 'https://docs.google.com/document',
-            imgUrl: require('../../assets/quick-links-icons/Docs.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Docs.png'),
         },
         {
             text: 'Sheets',
             link: 'https://sheets.google.com',
-            imgUrl: require('../../assets/quick-links-icons/Sheets.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Sheets.png'),
         },
         {
             text: 'Slides',
             link: 'https://slides.google.com',
-            imgUrl: require('../../assets/quick-links-icons/Slides.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Slides.png'),
         },
         {
             text: 'Youtube',
             link: 'https://www.youtube.com',
-            imgUrl: require('../../assets/quick-links-icons/Youtube.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Youtube.png'),
         },
         {
             text: 'Photos',
             link: 'https://photos.google.com',
-            imgUrl: require('../../assets/quick-links-icons/Photos.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Photos.png'),
         },
         {
             text: 'Maps',
             link: 'https://maps.google.com/maps',
-            imgUrl: require('../../assets/quick-links-icons/Maps.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Maps.png'),
         },
         {
             text: 'Meet',
             link: 'https://meet.google.com',
-            imgUrl: require('../../assets/quick-links-icons/Meet.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Meet.png'),
         },
         {
             text: 'Scholar',
             link: 'https://scholar.google.com',
-            imgUrl: require('../../assets/quick-links-icons/Scholar.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Scholar.png'),
         },
         {
             text: 'Classroom',
             link: 'https://classroom.google.com',
-            imgUrl: require('../../assets/quick-links-icons/Classroom.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Classroom.png'),
         },
     ];
     const cloudStorage = [
         {
             text: 'Notes',
             link: 'https://www.icloud.com/notes',
-            imgUrl: require('../../assets/quick-links-icons/Notes.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Notes.png'),
         },
         {
             text: 'iCloud Drive',
             link: 'https://www.icloud.com/iclouddrive',
-            imgUrl: require('../../assets/quick-links-icons/iCloud.png'),
+            imgUrl: require('../../../assets/quick-links-icons/iCloud.png'),
         },
         {
             text: 'Calendar',
             link: 'https://www.icloud.com/calendar',
-            imgUrl: require('../../assets/quick-links-icons/AppleCalendar.png'),
+            imgUrl: require('../../../assets/quick-links-icons/AppleCalendar.png'),
         },
         {
             text: 'Pages',
             link: 'https://www.icloud.com/pages',
-            imgUrl: require('../../assets/quick-links-icons/Pages.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Pages.png'),
         },
         {
             text: 'Numbers',
             link: 'https://www.icloud.com/numbers',
-            imgUrl: require('../../assets/quick-links-icons/Numbers.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Numbers.png'),
         },
         {
             text: 'Keynote',
             link: 'https://www.icloud.com/keynote',
-            imgUrl: require('../../assets/quick-links-icons/Keynote.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Keynote.png'),
         },
         {
             text: 'Outlook',
             link: 'https://outlook.live.com',
-            imgUrl: require('../../assets/quick-links-icons/Outlook.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Outlook.png'),
         },
         {
             text: 'OneDrive',
             link: 'https://onedrive.live.com',
-            imgUrl: require('../../assets/quick-links-icons/OneDrive.png'),
+            imgUrl: require('../../../assets/quick-links-icons/OneDrive.png'),
         },
         {
             text: 'OneNote',
             link: 'https://www.onenote.com/notebooks',
-            imgUrl: require('../../assets/quick-links-icons/Onenote.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Onenote.png'),
         },
         {
             text: 'Word',
             link: 'https://www.office.com/launch/word',
-            imgUrl: require('../../assets/quick-links-icons/Word.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Word.png'),
         },
         {
             text: 'Excel',
             link: 'https://www.office.com/launch/excel',
-            imgUrl: require('../../assets/quick-links-icons/Excel.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Excel.png'),
         },
         {
             text: 'PowerPoint',
             link: 'https://www.office.com/launch/powerpoint',
-            imgUrl: require('../../assets/quick-links-icons/Powerpoint.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Powerpoint.png'),
         },
     ];
     const streaming = [
         {
             text: 'Netfix',
             link: 'https://www.netflix.com',
-            imgUrl: require('../../assets/quick-links-icons/Netflix.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Netflix.png'),
         },
         {
             text: 'IMDb',
             link: 'https://www.imdb.com',
-            imgUrl: require('../../assets/quick-links-icons/IMDb.png'),
+            imgUrl: require('../../../assets/quick-links-icons/IMDb.png'),
         },
         {
             text: 'SonyLIV',
             link: 'https://www.sonyliv.com',
-            imgUrl: require('../../assets/quick-links-icons/Sonyliv.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Sonyliv.png'),
         },
         {
             text: 'Twitch',
             link: 'https://www.twitch.tv',
-            imgUrl: require('../../assets/quick-links-icons/Twitch.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Twitch.png'),
         },
         {
             text: 'HBO Max',
             link: 'https://www.hbomax.com',
-            imgUrl: require('../../assets/quick-links-icons/HBO.png'),
+            imgUrl: require('../../../assets/quick-links-icons/HBO.png'),
         },
         {
             text: 'Crunchyroll',
             link: 'https://www.crunchyroll.com',
-            imgUrl: require('../../assets/quick-links-icons/Crunchyroll.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Crunchyroll.png'),
         },
         {
             text: 'Prime Video',
             link: 'https://www.primevideo.com',
-            imgUrl: require('../../assets/quick-links-icons/PrimeVideo.png'),
+            imgUrl: require('../../../assets/quick-links-icons/PrimeVideo.png'),
         },
         {
             text: 'Hulu',
             link: 'https://www.hulu.com',
-            imgUrl: require('../../assets/quick-links-icons/Hulu.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Hulu.png'),
         },
         {
             text: 'Disney+',
             link: 'https://www.disneyplus.com',
-            imgUrl: require('../../assets/quick-links-icons/Disney.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Disney.png'),
         },
         {
             text: 'Voot',
             link: 'https://www.voot.com',
-            imgUrl: require('../../assets/quick-links-icons/Voot.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Voot.png'),
         },
         {
             text: 'Spotify',
             link: 'https://open.spotify.com',
-            imgUrl: require('../../assets/quick-links-icons/Spotify.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Spotify.png'),
         },
         {
             text: 'Hotstar',
             link: 'https://www.hotstar.com',
-            imgUrl: require('../../assets/quick-links-icons/Hotstar.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Hotstar.png'),
         },
     ];
     const socialNetworks = [
         {
             text: 'Facebook',
             link: 'https://www.facebook.com',
-            imgUrl: require('../../assets/quick-links-icons/Facebook.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Facebook.png'),
         },
         {
             text: 'WhatsApp',
             link: 'https://web.whatsapp.com',
-            imgUrl: require('../../assets/quick-links-icons/Whatsapp.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Whatsapp.png'),
         },
         {
             text: 'Instagram',
             link: 'https://instagram.com',
-            imgUrl: require('../../assets/quick-links-icons/Instagram.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Instagram.png'),
         },
         {
             text: 'Pinterest',
             link: 'https://www.pinterest.com',
-            imgUrl: require('../../assets/quick-links-icons/Pinterest.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Pinterest.png'),
         },
         {
             text: 'Discord',
             link: 'https://discord.com',
-            imgUrl: require('../../assets/quick-links-icons/Discord.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Discord.png'),
         },
         {
             text: 'Twitter',
             link: 'https://twitter.com',
-            imgUrl: require('../../assets/quick-links-icons/Twitter.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Twitter.png'),
         },
         {
             text: 'Reddit',
             link: 'https://www.reddit.com',
-            imgUrl: require('../../assets/quick-links-icons/Reddit.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Reddit.png'),
         },
         {
             text: 'Telegram',
             link: 'https://webk.telegram.org',
-            imgUrl: require('../../assets/quick-links-icons/Telegram.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Telegram.png'),
         },
         {
             text: 'LinkedIn',
             link: 'https://www.linkedin.com',
-            imgUrl: require('../../assets/quick-links-icons/Linkedin.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Linkedin.png'),
         },
         {
             text: 'TikTok',
             link: 'https://www.tiktok.com',
-            imgUrl: require('../../assets/quick-links-icons/Tiktok.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Tiktok.png'),
         },
         {
             text: 'WeChat',
             link: 'https://www.wechat.com',
-            imgUrl: require('../../assets/quick-links-icons/Wechat.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Wechat.png'),
         },
         {
             text: 'Line',
             link: 'https://timeline.line.me',
-            imgUrl: require('../../assets/quick-links-icons/Line.png'),
+            imgUrl: require('../../../assets/quick-links-icons/Line.png'),
         },
     ];
 
@@ -286,7 +286,7 @@ function QuickLinks() {
         return (
             apps.map(app => {
                 return (
-                    <li className="apps-list-item">
+                    <li key={app.text} className="apps-list-item">
                         <a href={app.link} target="_top" className="apps-list-anchor">
                             <img src={app.imgUrl} alt={app.text} loading="lazy" className="apps-anchor-image" />
                             <span className="apps-anchor-title">{app.text}</span>

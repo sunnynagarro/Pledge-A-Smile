@@ -4,6 +4,9 @@ import React, { Component } from "react";
 import { ImArrowUp } from "react-icons/im";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 
+// Api actions
+import { buddiesImpact } from "../../../actions/groupService";
+
 import AddEditGroup from "./AddEditGroup";
 import GroupsList from "./GroupsList";
 import InviteBuddies from "./InviteBuddies";
@@ -28,12 +31,14 @@ class TabbingBuddies extends Component {
             currentUser: JSON.parse(localStorage.getItem("user")) || {},
             isCreateGroupModalOpen: false,
             inviting: false,
+            totalImpact: '',
             updateGroupsList: false // Change it to true when we wannt to update the Groups list.
         }
     }
 
     componentDidMount() {
         document.addEventListener("mousedown", this.handleClickOutside);
+        this.getBuddiesImpact();
     }
 
     componentWillUnmount() {
@@ -51,11 +56,19 @@ class TabbingBuddies extends Component {
         return (
             <div className="header-button-container">
                 <button className="header-button tabbing-buddies-button rounded-full bg-white" onClick={this.toggleBuddiesModal}>
-                    My Buddies &nbsp;&nbsp;37
+                    My Buddies &nbsp;&nbsp;{this.state.totalImpact}
                 </button>
                 {this.state.isBuddiesModalOpen && this.tabbingBuddiesModal()}
             </div>
         );
+    }
+
+    // Get overall buddies impact.
+    async getBuddiesImpact() {
+        let response = await buddiesImpact(this.state.currentUser?._id);
+        this.setState({
+            totalImpact: response.totalImpact
+        });
     }
 
     // Tabbing buddies modal.
@@ -66,8 +79,8 @@ class TabbingBuddies extends Component {
                 className="modal-container z-50 p-3 drop-shadow-lg rounded-md relative left-5 mt-2 table w-[250px] md:w-[250px]"
             >
                 <ImArrowUp className="top-arrow-left" />
-                <div className="buddies-modal-header flex">
-                    <h2 className="left modal-header text-l">Your Leaderboard</h2>
+                <div className="modal-header buddies-modal-header flex">
+                    <h2 className="left text-l">Your Leaderboard</h2>
                     <div className="new-group-button">
                         <AiOutlinePlusCircle onClick={this.toggleCreateGroupModal} />
                     </div>

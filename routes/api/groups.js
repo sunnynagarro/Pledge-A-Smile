@@ -6,6 +6,10 @@ const {
   updateGroup__PUT,
   getGroupUsers__GET,
   deleteGroup__DELETE,
+  getInvitationGroup_GET,
+  acceptGroupInvite_POST,
+  leaveGroup_PUT,
+  buddiesImpact_GET,
 } = require("../../controllers/groupsController");
 
 /*
@@ -37,5 +41,29 @@ router.delete("/:groupId", deleteGroup__DELETE);
   @method GET
 */
 router.get("/:groupId/users", getGroupUsers__GET);
+
+/*
+  @route /api/groups/invitations/:invitationId
+  @method GET
+*/
+router.get("/invitations/:invitationId", getInvitationGroup_GET);
+
+/*
+  @route /api/groups/invitations/:invitationId/accept
+  @method POST
+*/
+router.post("/invitations/:invitationId/accept", acceptGroupInvite_POST);
+
+/*
+  @route /api/groups/:groupId/leave
+  @method PUT
+*/
+router.put("/:groupId/leave", leaveGroup_PUT);
+
+/*
+  @route /api/groups/buddies/impact
+  @method GET
+*/
+router.get("/buddies/impact", buddiesImpact_GET);
 
 module.exports = router;

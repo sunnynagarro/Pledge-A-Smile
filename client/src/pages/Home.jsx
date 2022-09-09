@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 // components
-import Dashboard from "../components/Dashboard";
+import Dashboard from "../components/Dashboard/Dashboard";
 
 // context
 import UserContext from "../context/UserContext";

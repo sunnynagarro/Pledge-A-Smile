@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import GuideChimp from 'guidechimp';
 
 // api actions
-import { updateUserTabsOpened } from "../actions/tabsInfo";
+import { updateUserTabsOpened } from "../../actions/tabsInfo";
 
 // icons
 import { FcGoogle } from "react-icons/fc";
@@ -11,180 +11,180 @@ import { BsGear } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 
 // logo
-import Logo from "../assets/logo-dashboard.png";
+import Logo from "../../assets/logo-dashboard.png";
 
 // components
 // import Invite from "./DashboardComponents/Invite";
-import GlobalImpact from "./DashboardComponents/GlobalImpact";
-import UserImpact from "./DashboardComponents/UserImpact";
+import GlobalImpact from "./GlobalImpact/GlobalImpact";
+import UserImpact from "./UserImpact/UserImpact";
 // import GoogleAds from "./GoogleAds";
-import QuickLinks from "./DashboardComponents/QuickLinks";
-import TabbingBuddies from "./DashboardComponents/MyBuddies/TabbingBuddies";
+import QuickLinks from "./QuickLinks/QuickLinks";
+import TabbingBuddies from "./MyBuddies/TabbingBuddies";
 
 var images = [
   {
     id: 1,
-    url: require("../assets/hero-bg.jpg"),
+    url: require("../../assets/hero-bg.jpg"),
     date: new Date().toDateString()
   },
   {
     id: 2,
-    url: require("../assets/hero-bg-2.webp"),
+    url: require("../../assets/hero-bg-2.webp"),
     date: new Date().toDateString()
   },
   {
     id: 3,
-    url: require("../assets/hero-bg-3.webp"),
+    url: require("../../assets/hero-bg-3.webp"),
     date: new Date().toDateString()
   },
   {
     id: 4,
-    url: require("../assets/hero-bg-4.webp"),
+    url: require("../../assets/hero-bg-4.webp"),
     date: new Date().toDateString()
   },
   {
     id: 5,
-    url: require("../assets/hero-bg-5.webp"),
+    url: require("../../assets/hero-bg-5.webp"),
     date: new Date().toDateString()
   },
   {
     id: 6,
-    url: require("../assets/hero-bg-6.webp"),
+    url: require("../../assets/hero-bg-6.webp"),
     date: new Date().toDateString()
   },
   {
     id: 7,
-    url: require("../assets/hero-bg-7.webp"),
+    url: require("../../assets/hero-bg-7.webp"),
     date: new Date().toDateString()
   },
   {
     id: 8,
-    url: require("../assets/hero-bg-8.webp"),
+    url: require("../../assets/hero-bg-8.webp"),
     date: new Date().toDateString()
   },
   {
     id: 9,
-    url: require("../assets/hero-bg-9.webp"),
+    url: require("../../assets/hero-bg-9.webp"),
     date: new Date().toDateString()
   },
   {
     id: 10,
-    url: require("../assets/hero-bg-10.webp"),
+    url: require("../../assets/hero-bg-10.webp"),
     date: new Date().toDateString()
   },
   {
     id: 11,
-    url: require("../assets/hero-bg-11.webp"),
+    url: require("../../assets/hero-bg-11.webp"),
     date: new Date().toDateString()
   },
   {
     id: 12,
-    url: require("../assets/hero-bg-12.webp"),
+    url: require("../../assets/hero-bg-12.webp"),
     date: new Date().toDateString()
   },
   {
     id: 13,
-    url: require("../assets/hero-bg-13.webp"),
+    url: require("../../assets/hero-bg-13.webp"),
     date: new Date().toDateString()
   },
   {
     id: 14,
-    url: require("../assets/hero-bg-14.webp"),
+    url: require("../../assets/hero-bg-14.webp"),
     date: new Date().toDateString()
   },
   {
     id: 15,
-    url: require("../assets/hero-bg-15.webp"),
+    url: require("../../assets/hero-bg-15.webp"),
     date: new Date().toDateString()
   },
   {
     id: 16,
-    url: require("../assets/hero-bg-16.webp"),
+    url: require("../../assets/hero-bg-16.webp"),
     date: new Date().toDateString()
   },
   {
     id: 17,
-    url: require("../assets/hero-bg-17.webp"),
+    url: require("../../assets/hero-bg-17.webp"),
     date: new Date().toDateString()
   },
   {
     id: 18,
-    url: require("../assets/hero-bg-18.webp"),
+    url: require("../../assets/hero-bg-18.webp"),
     date: new Date().toDateString()
   },
   {
     id: 19,
-    url: require("../assets/hero-bg-19.webp"),
+    url: require("../../assets/hero-bg-19.webp"),
     date: new Date().toDateString()
   },
   {
     id: 20,
-    url: require("../assets/hero-bg-20.webp"),
+    url: require("../../assets/hero-bg-20.webp"),
     date: new Date().toDateString()
   },
   {
     id: 21,
-    url: require("../assets/hero-bg-21.webp"),
+    url: require("../../assets/hero-bg-21.webp"),
     date: new Date().toDateString()
   },
   {
     id: 22,
-    url: require("../assets/hero-bg-22.webp"),
+    url: require("../../assets/hero-bg-22.webp"),
     date: new Date().toDateString()
   },
   {
     id: 23,
-    url: require("../assets/hero-bg-23.webp"),
+    url: require("../../assets/hero-bg-23.webp"),
     date: new Date().toDateString()
   },
   {
     id: 24,
-    url: require("../assets/hero-bg-24.webp"),
+    url: require("../../assets/hero-bg-24.webp"),
     date: new Date().toDateString()
   },
   {
     id: 25,
-    url: require("../assets/hero-bg-25.webp"),
+    url: require("../../assets/hero-bg-25.webp"),
     date: new Date().toDateString()
   },
   {
     id: 26,
-    url: require("../assets/hero-bg-26.webp"),
+    url: require("../../assets/hero-bg-26.webp"),
     date: new Date().toDateString()
   },
   {
     id: 27,
-    url: require("../assets/hero-bg-27.webp"),
+    url: require("../../assets/hero-bg-27.webp"),
     date: new Date().toDateString()
   },
   {
     id: 28,
-    url: require("../assets/hero-bg-28.webp"),
+    url: require("../../assets/hero-bg-28.webp"),
     date: new Date().toDateString()
   },
   {
     id: 29,
-    url: require("../assets/hero-bg-29.webp"),
+    url: require("../../assets/hero-bg-29.webp"),
     date: new Date().toDateString()
   },
   {
     id: 30,
-    url: require("../assets/hero-bg-30.webp"),
+    url: require("../../assets/hero-bg-30.webp"),
     date: new Date().toDateString()
   },
   {
     id: 31,
-    url: require("../assets/hero-bg-31.webp"),
+    url: require("../../assets/hero-bg-31.webp"),
     date: new Date().toDateString()
   },
   {
     id: 32,
-    url: require("../assets/hero-bg-32.webp"),
+    url: require("../../assets/hero-bg-32.webp"),
     date: new Date().toDateString()
   },
   {
     id: 33,
-    url: require("../assets/hero-bg-33.webp"),
+    url: require("../../assets/hero-bg-33.webp"),
     date: new Date().toDateString()
   },
 ];
@@ -467,7 +467,7 @@ function Dashboard({ user }) {
             </div>
           </div>
           <div className="right">
-            <img onClick={onSwitchLogo} src={require('../assets/loop.png')} alt="Switch between time and logo" />
+            <img onClick={onSwitchLogo} src={require('../../assets/loop.png')} alt="Switch between time and logo" />
           </div>
         </div>
 

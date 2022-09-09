@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
 // api actions
-import { fetchGlobalTabsOpened } from "../../actions/tabsInfo";
+import { fetchGlobalTabsOpened } from "../../../actions/tabsInfo";
 
 // icons
 import { FcGlobe } from "react-icons/fc";

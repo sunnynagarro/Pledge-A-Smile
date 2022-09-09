@@ -125,6 +125,9 @@ form.search-container:hover .search-input {
   background-color: #E7EDF1;
   font-size: 14px;
 }
+.buddies-modal-header {
+  justify-content: space-between;
+}
 .modal-container .buddies-modal-header svg {
   width: 22px;
   height: 22px;
@@ -132,6 +135,8 @@ form.search-container:hover .search-input {
 .modal-header {
   font-weight: 600;
   font-size: 15px;
+}
+div.modal-header {
   margin-bottom: 20px;
 }
 .modal-body input[type="text"] {
@@ -504,7 +509,6 @@ main.container h2 {
 .group .group-heading .group-icon {
   font-size: 22px;
   margin-right: 5px;
-  margin-left: -5px;
 }
 .group .group-heading:hover .group-icon {
   background: #ddd;
@@ -535,7 +539,7 @@ main.container h2 {
   font-weight: 800;
 }
 .group .group-list-row .member-name {
-  margin-left: 22px;
+  margin-left: 27px;
 }
 .group-horizontal-line {
   border-bottom: 1px solid #ddd;
@@ -620,4 +624,66 @@ main.container h2 {
 .groups-container {
   max-height: 350px;
   overflow-y: auto;
+}
+.accept-invite-modal.modal-container {
+  width: 55% !important;
+  max-width: 445px;
+  margin: auto;
+  padding: 40px 40px 39px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 8px 40px rgb(25 26 26 / 20%);
+  height: 350px;
+  text-align: center;
+}
+.accept-invite-modal .modal-header img.logo {
+  position: absolute;
+  top: -70px;
+  left: 30%;
+  width: 170px;
+}
+.accept-invite-modal .modal-header h3 {
+  font-size: 22px;
+}
+
+.accept-invite-modal .modal-header .green {
+  color: #28af89;
+}
+
+.accept-invite-modal .modal-body .bold-text {
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.accept-invite-modal .modal-body .green {
+  color: #28af89;
+}
+
+.accept-invite-modal .modal-footer .half-wide {
+  width: 120px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.accept-invite-modal .modal-footer .full-wide button {
+  background-color: #EEB905;
+  padding: 7px 15px;
+  color: white;
+  border-radius: 10px;
+  width: 180px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.accept-invite-modal .modal-footer .full-wide .text-yellow {
+  color: #EEB905;
+}
+
+.accept-invite-modal .modal-footer .full-wide {
+  width: 100%;
+}
+
+.accept-invite-modal .modal-footer div {
+  gap: 35px;
 }

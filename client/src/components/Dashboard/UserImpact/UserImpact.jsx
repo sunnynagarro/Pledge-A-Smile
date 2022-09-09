@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 // api actions
-import { fetchUserTabsOpened } from "../../actions/tabsInfo";
+import { fetchUserTabsOpened } from "../../../actions/tabsInfo";
 
 // icons
 import { FaHamburger } from "react-icons/fa";
