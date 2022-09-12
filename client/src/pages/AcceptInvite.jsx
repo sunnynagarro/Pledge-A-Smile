@@ -138,7 +138,7 @@ class AcceptInvite extends Component {
             toast.success("You have accepted the invite.");
         }
         setTimeout(() => {
-            window.open('http://localhost:3000', '_self');
+            window.open('https://tab.pledgeasmile.com', '_self');
         }, 2000);
     }
 
@@ -146,7 +146,7 @@ class AcceptInvite extends Component {
     cancel() {
         toast.success("You have cancelled the invite.");
         setTimeout(() => {
-            window.open('http://localhost:3000', '_self');
+            window.open('https://tab.pledgeasmile.com', '_self');
         }, 2000);
     }
 }

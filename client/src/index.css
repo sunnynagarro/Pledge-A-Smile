@@ -21,6 +21,10 @@ body {
   user-select: none; /* Standard syntax */
 }
 
+.dashboard-main-container {
+  background-color: #555;
+}
+
 .greeting {
   font-size: 32px;
   line-height: 1;
@@ -465,6 +469,7 @@ main.container h2 {
 .tabbing-buddies-button {
   padding: 5px 10px;
   font-size: 14px;
+  font-weight: 600;
 }
 .modal-footer {
   text-align: center;

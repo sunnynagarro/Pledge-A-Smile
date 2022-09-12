@@ -1,4 +1,4 @@
-let API_URL = "http://localhost:3001/api/groups";
+let API_URL = "https://tab.pledgeasmile.com/backend/api/groups";
 
 export const fetchGroups = async (userId) => {
   let response = await fetch(API_URL + "?userId=" + userId, {

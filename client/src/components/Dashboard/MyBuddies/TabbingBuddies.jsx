@@ -86,9 +86,9 @@ class TabbingBuddies extends Component {
                     </div>
                 </div>
                 <GroupsList updateList={this.state.updateGroupsList} listUpdated={this.groupsListUpdated} closeOtherModals={this.closeOtherModals} />
-                <div className="modal-footer">
+                {/* <div className="modal-footer">
                     <button onClick={() => this.setState(old => ({ inviting: !old.inviting, isCreateGroupModalOpen: false }))} className="success-button">Invite Buddies</button>
-                </div>
+                </div> */}
                 {this.state.isCreateGroupModalOpen && <AddEditGroup closeModal={this.toggleCreateGroupModal} />}
                 {this.state.inviting && <InviteBuddies inviteUrl={"https://tab.pledgeasmile.com/login?referralId=" + this.state.currentUser.referralId} />}
             </div>
@@ -102,7 +102,6 @@ class TabbingBuddies extends Component {
 
     // Show create group modal.
     toggleCreateGroupModal() {
-        console.log("Toggle create group");
         this.setState(prevState => ({ isCreateGroupModalOpen: !prevState.isCreateGroupModalOpen, updateGroupsList: true, inviting: false }));
     }
 

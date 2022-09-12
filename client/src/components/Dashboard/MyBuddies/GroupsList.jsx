@@ -13,9 +13,10 @@ class GroupsList extends Component {
         
         // This binding is necessary to make `this` work in the callback
         this.closeOtherModals = this.closeOtherModals.bind(this, props);
+        let lastGroupsList = JSON.parse(localStorage.getItem('groupsList'));
 
         this.state = {
-            groupsList: [],
+            groupsList: lastGroupsList,
             currentUser: JSON.parse(localStorage.getItem("user")) || {},
             groupOptionsOpen: false,
             group: null
@@ -27,8 +28,9 @@ class GroupsList extends Component {
         fetchGroups(this.state.currentUser._id).then(async (res) => {
             let groups = res.groups;
             this.setState({
-                groupsList: groups
+                groupsList: groups,
             });
+            localStorage.setItem('groupsList', JSON.stringify(groups));
         })
         .catch((error) => {
             console.log(error);
@@ -50,7 +52,6 @@ class GroupsList extends Component {
     }
 
     render() {
-        console.log(this.state.groupsList);
         return (
             <div className="groups-container">
                 <div className="groups-list">

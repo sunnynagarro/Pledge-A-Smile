@@ -14,7 +14,6 @@ class InviteBuddies extends Component {
     }
     
     render() {
-        console.log("Invite buddies called");
         return (
             <div className="modal-container second-level-modal invite-to-group-modal z-50 p-3 drop-shadow-lg rounded-md absolute left-25 top-5 mt-2 table w-[150px] md:w-[150px]">
                 <div className="modal-title">

@@ -21,212 +21,19 @@ import UserImpact from "./UserImpact/UserImpact";
 import QuickLinks from "./QuickLinks/QuickLinks";
 import TabbingBuddies from "./MyBuddies/TabbingBuddies";
 
-var images = [
-  {
-    id: 1,
-    url: require("../../assets/hero-bg.jpg"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 2,
-    url: require("../../assets/hero-bg-2.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 3,
-    url: require("../../assets/hero-bg-3.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 4,
-    url: require("../../assets/hero-bg-4.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 5,
-    url: require("../../assets/hero-bg-5.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 6,
-    url: require("../../assets/hero-bg-6.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 7,
-    url: require("../../assets/hero-bg-7.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 8,
-    url: require("../../assets/hero-bg-8.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 9,
-    url: require("../../assets/hero-bg-9.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 10,
-    url: require("../../assets/hero-bg-10.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 11,
-    url: require("../../assets/hero-bg-11.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 12,
-    url: require("../../assets/hero-bg-12.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 13,
-    url: require("../../assets/hero-bg-13.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 14,
-    url: require("../../assets/hero-bg-14.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 15,
-    url: require("../../assets/hero-bg-15.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 16,
-    url: require("../../assets/hero-bg-16.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 17,
-    url: require("../../assets/hero-bg-17.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 18,
-    url: require("../../assets/hero-bg-18.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 19,
-    url: require("../../assets/hero-bg-19.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 20,
-    url: require("../../assets/hero-bg-20.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 21,
-    url: require("../../assets/hero-bg-21.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 22,
-    url: require("../../assets/hero-bg-22.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 23,
-    url: require("../../assets/hero-bg-23.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 24,
-    url: require("../../assets/hero-bg-24.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 25,
-    url: require("../../assets/hero-bg-25.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 26,
-    url: require("../../assets/hero-bg-26.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 27,
-    url: require("../../assets/hero-bg-27.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 28,
-    url: require("../../assets/hero-bg-28.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 29,
-    url: require("../../assets/hero-bg-29.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 30,
-    url: require("../../assets/hero-bg-30.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 31,
-    url: require("../../assets/hero-bg-31.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 32,
-    url: require("../../assets/hero-bg-32.webp"),
-    date: new Date().toDateString()
-  },
-  {
-    id: 33,
-    url: require("../../assets/hero-bg-33.webp"),
-    date: new Date().toDateString()
-  },
-];
+// Constants
+import { bgImages } from '../../constants/bgImages.js';
+import { guideTour } from '../../constants/guideList.js';
 
-let tour = [
-  {
-    element: '#search',
-    title: 'Search Google',
-    description: 'Search the world\'s information, including webpages, images, videos and more. Google has many special features to help you find exactly what you\'re looking for.',
-    position: 'bottom'
-  },
-  {
-    element: '#globalImpact',
-    title: 'Global Impact',
-    description: 'See global impact that all of us are making, because the right to food is a human right.',
-    position: 'left'
-  },
-  {
-    element: '#userImpact',
-    title: 'User Impact',
-    description: 'You can see how many tabs you have opened so far and what impact you have made.',
-    position: 'bottom'
-  },
-  {
-    element: '#quickLinks',
-    title: 'Quick Links',
-    description: 'Most of your favourite apps are here for easy access.',
-    position: 'bottom'
-  },
-  {
-    element: '#profileLink',
-    title: 'Profile',
-    description: 'You can see your basic information and can increase your overall impact within your profile.',
-    position: 'top'
-  },
-];
+const images = bgImages;
+const tour = guideTour;
 
 let options = {
   exitOverlay: false,
   interaction: false
 };
 
+// If the user has first logged in, then guide the user throught the features.
 function callGuide() {
   var guideStorage = localStorage.getItem('seenGuide');
   if (guideStorage === null) {
@@ -238,26 +45,44 @@ function callGuide() {
   }
 }
 
+// Set background image.
 function setCurrentBGImage() {
   var storedImage = localStorage.getItem('bg-image');
+
+  // Check if the background image is already set.
   if (storedImage !== null && storedImage !== undefined) {
     var bgImage = JSON.parse(storedImage);
     var currentDate = new Date(new Date().toDateString());
+
+    // Check if the next has come and we need to change the image now.
     if (new Date(bgImage.date) < currentDate) {
+
+      // Check which image needs to be set next.
       var nextImageId = (bgImage.id % images.length) + 1;
       images.forEach((img) => {
         if (img.id === nextImageId) {
+          img.date = new Date().toDateString();
+
+          // Set the new image.
           localStorage.setItem('bg-image', JSON.stringify(img));
           HeroBgImage = img.url;
         }
       });
     } else {
+
+      // No need to change the image.
       HeroBgImage = bgImage.url;
     }
   } else {
-    localStorage.setItem('bg-image', JSON.stringify(images[0]));
-    HeroBgImage = images[0].url;
+
+    // It is a fresh user, so set the first image.
+    let firstImage = images[0];
+    firstImage.date = new Date().toDateString();
+    localStorage.setItem('bg-image', JSON.stringify(firstImage));
+    HeroBgImage = firstImage.url;
   }
+
+  // Default case: If Image is still not set, set the first image.
   if (HeroBgImage === null || HeroBgImage === undefined) {
     HeroBgImage = images[0].url;
   }
@@ -341,6 +166,8 @@ function Dashboard({ user }) {
   let greet = "";
   let now = new Date();
   let hour = now.getHours();
+
+  // Set greetings.
   if (hour < 12) {
     if (user.name) {
       greet = "Good Morning, " + capitalizeFirst(user.name);
@@ -417,11 +244,13 @@ function Dashboard({ user }) {
   //   );
   // };
 
+  // Switch between logo and time.
   const onSwitchLogo = () => {
     localStorage.setItem('switchLogo', !switchLogo);
     setSwitchLogo(!switchLogo);
   }
 
+  // Search google.
   const handleSearch = (event) => {
     event.preventDefault();
     if (query.trim() === "") return;
@@ -429,11 +258,13 @@ function Dashboard({ user }) {
     window.open(url, "_self");
     setQuery("");
   };
+
+  // Dashboard page HTML.
   return (
     <div
-      className="main-container h-[100vh] flex flex-col"
+      className="dashboard-main-container main-container h-[100vh] flex flex-col"
       style={{
-        background: `url(${HeroBgImage})`,
+        backgroundImage: `url(${HeroBgImage})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}

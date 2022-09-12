@@ -39,7 +39,6 @@ function LoginPage() {
   });
 
   const responseGoogle = async (event) => {
-    console.log(event.toString());
     if (event.access_token) {
       try {
         let response = await fetch(
