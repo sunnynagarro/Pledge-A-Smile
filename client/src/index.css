@@ -115,11 +115,11 @@ form.search-container:hover .search-input {
 .global-button {
   padding: 10px 4px 10px 10px;
 }
-.settings {
+.settings-button {
   background: transparent;
   color: white;
 }
-.settings svg {
+.settings-button svg {
   width: 22px;
   height: 22px;
 }
@@ -167,6 +167,14 @@ div.modal-header {
   top: -7px;
   color: #E7EDF1;
   font-size: 14px;
+}
+.bottom-arrow-left {
+  position: absolute;
+  left: 12px;
+  bottom: -7px;
+  color: #E7EDF1;
+  font-size: 14px;
+  color: white;
 }
 .static-quick-links .top-arrow-right {
   color: white;
@@ -304,6 +312,134 @@ main.container h2 {
   z-index: 99;
   font-size: 13px;
   color: #333;
+}
+.settings-modal {
+  position: absolute;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  left: 12px;
+  bottom: 52px;
+  z-index: 99;
+  font-size: 13px;
+  color: #333;
+  height: 450px;
+}
+.settings-modal nav {
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  width: 130px;
+}
+.settings-modal .view-container {
+  width: 350px;
+  overflow: hidden;
+}
+.settings-modal .view-container h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.settings-modal .view-container .tile-selection-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.album-images-list, .albums-list-container {
+  margin-top: 15px;
+}
+.settings-modal .view-container .bordered-container {
+  height: 96px;
+  text-align: center;
+  border: 1px solid #666;
+  border-radius: 4px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  width: 31%;
+  overflow: hidden;
+  position: relative;
+}
+.settings-modal .view-container .bordered-container .select-album {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+.settings-modal .view-container .bordered-container .select-album svg {
+  color: gray;
+  border-radius: 20px;
+  width: 17px;
+  height: 17px;
+  background-color: white;
+  display: none;
+}
+.settings-modal .view-container .bordered-container .select-album.active svg {
+  color: #28af89;
+  display: block;
+}
+.settings-modal .view-container .bordered-container:hover .select-album svg {
+  display: block;
+}
+.settings-modal .view-container .bordered-container .select-album svg:hover {
+  color: #28af89;
+}
+.settings-modal .view-container .bordered-container.active {
+  background-color: #28af89;
+  color: white;
+  border: none;
+}
+.settings-modal .view-container .bordered-container:hover {
+  border: 1px solid #28af89;
+  box-shadow: 1px 1px 6px #888888;
+}
+.settings-modal .view-container .tile-selection-list .bordered-container svg {
+  margin: auto;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.settings-modal .albums-list-container {
+  font-weight: 600;
+  font-size: 14px;
+}
+.settings-modal .albums-list-container .bordered-container {
+  color: white;
+}
+.settings-modal .albums-list-container .tile-list-image {
+  background-size: auto 96px;
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  z-index: -1;
+  border-radius: 4px;
+}
+.settings-modal .albums-list-container .all-images-thumbnail {
+  background-image: url('assets/thumbnails/all-thumbnail.png');
+}
+.settings-modal .albums-list-container .nature-images-thumbnail {
+  background-image: url('assets/thumbnails/nature-thumbnail.png');
+}
+.settings-modal .albums-list-container .architecture-images-thumbnail {
+  background-image: url('assets/thumbnails/architecture-thumbnail.png');
+}
+/* .settings-modal .albums-list-container .flowers-images-thumbnail {
+  background-image: url('assets/hero-bg-19.webp');
+} */
+.settings-modal .nav .nav-item {
+  margin: 0 0 15px;
+  cursor: pointer;
+  padding: 5px;
+  color: #555;
+  border-bottom: 2px solid white;
+}
+
+.settings-modal .nav .nav-item:hover {
+  color: #888;
+}
+
+.settings-modal .nav .nav-item.active {
+  color: #28af89;
+  border-bottom: 2px solid #28af89;
 }
 
 .static-quick-links nav {
@@ -691,4 +827,90 @@ main.container h2 {
 
 .accept-invite-modal .modal-footer div {
   gap: 35px;
+}
+.album-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-weight: 600;
+}
+.album-header .album-back-button {
+  cursor: pointer;
+  color: #28af89;
+  display: inline-block;
+  width: 31%;
+}
+.album-header .album-back-button svg {
+  display: inline;
+  position: relative;
+  bottom: 1px;
+  font-size: 18px;
+}
+.album-header .album-name {
+  margin: auto;
+}
+.album-header .empty-right {
+  width: 31%;
+}
+.album-images-list .bordered-container .tile-list-image {
+  background-repeat: no-repeat;
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+  background-size: auto 96px;
+  border: none;
+}
+.settings-modal header {
+  padding: 20px 20px 0;
+}
+.settings-modal .body {
+  height: 310px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-top: 15px;
+  padding: 0 20px;
+}
+.album-footer {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  background-color: white;
+  width: 295px;
+  display: flex;
+  gap: 10px;
+}
+.album-footer button {
+  background-color: #28af89;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 10px;
+}
+.external-link-container{
+  margin-top: 15px;
+}
+.external-link-container .external-link-input {
+  width: 100%;
+  border: none;
+  padding: 5px 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+.external-link-container .external-link-input:focus {
+  outline: none;
+}
+.external-link-container button.submit {
+  background-color: #28af89;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.external-link-container .help-section {
+  margin-top: 15px;
+}
+.external-link-container .help-section button {
+  color: #28af89;
 }

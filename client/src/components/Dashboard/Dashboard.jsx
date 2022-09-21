@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import GuideChimp from 'guidechimp';
 
 // api actions
@@ -7,7 +6,6 @@ import { updateUserTabsOpened } from "../../actions/tabsInfo";
 
 // icons
 import { FcGoogle } from "react-icons/fc";
-import { BsGear } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 
 // logo
@@ -20,12 +18,13 @@ import UserImpact from "./UserImpact/UserImpact";
 // import GoogleAds from "./GoogleAds";
 import QuickLinks from "./QuickLinks/QuickLinks";
 import TabbingBuddies from "./MyBuddies/TabbingBuddies";
+import Settings from "./Settings/Settings";
 
 // Constants
-import { bgImages } from '../../constants/bgImages.js';
+import { allBgImages, natureBgImages, architectureBgImages } from '../../constants/bgImages.js';
 import { guideTour } from '../../constants/guideList.js';
 
-const images = bgImages;
+let images = [];
 const tour = guideTour;
 
 let options = {
@@ -45,41 +44,71 @@ function callGuide() {
   }
 }
 
+// Reset images collection to latest.
+function resetImagesCollection() {
+  let background = localStorage.getItem('background');
+  if (background === null || background === undefined) {
+    localStorage.setItem('background', 'All');
+    background = 'All';
+  }
+  if (background.toLowerCase() === 'all') {
+    images = allBgImages;
+  } else if (background.toLowerCase() === 'nature') {
+    images = natureBgImages;
+  } else if (background.toLowerCase() === 'architecture') {
+    images = architectureBgImages;
+  } else {
+    let image = {
+      url: background
+    };
+    images = [];
+    images.push(image);
+  }
+}
+
 // Set background image.
 function setCurrentBGImage() {
-  var storedImage = localStorage.getItem('bg-image');
+  var currentImageObjString = localStorage.getItem('bg-image');
+  resetImagesCollection();
 
   // Check if the background image is already set.
-  if (storedImage !== null && storedImage !== undefined) {
-    var bgImage = JSON.parse(storedImage);
+  if (currentImageObjString !== null && currentImageObjString !== undefined) {
+    var bgImage = JSON.parse(currentImageObjString);
+
+    // When single image is set.
+    if ((bgImage?.date === null || bgImage?.date === undefined) && (bgImage?.url !== undefined && bgImage?.url !== null)) {
+      HeroBgImage = bgImage.url;
+      return;
+    }
+
     var currentDate = new Date(new Date().toDateString());
 
-    // Check if the next has come and we need to change the image now.
-    if (new Date(bgImage.date) < currentDate) {
+    // Check if the next day has come and we need to change the image now.
+    if (new Date(bgImage?.date) < currentDate) {
 
       // Check which image needs to be set next.
-      var nextImageId = (bgImage.id % images.length) + 1;
-      images.forEach((img) => {
-        if (img.id === nextImageId) {
-          img.date = new Date().toDateString();
+      let image = images[Math.floor(Math.random()*images.length)];
+      image.date = new Date().toDateString();
+      // Set the new image.
+      localStorage.setItem('bg-image', JSON.stringify(image));
+      HeroBgImage = image.url;
 
-          // Set the new image.
-          localStorage.setItem('bg-image', JSON.stringify(img));
-          HeroBgImage = img.url;
-        }
-      });
     } else {
 
       // No need to change the image.
-      HeroBgImage = bgImage.url;
+      HeroBgImage = bgImage?.url;
     }
   } else {
 
-    // It is a fresh user, so set the first image.
-    let firstImage = images[0];
-    firstImage.date = new Date().toDateString();
-    localStorage.setItem('bg-image', JSON.stringify(firstImage));
-    HeroBgImage = firstImage.url;
+    // It is a fresh user.
+    let image = images[Math.floor(Math.random()*images.length)];
+
+    // If there are more than 1 image, set the date to expire.
+    if (images.length > 1) {
+      image.date = new Date().toDateString();
+    }
+    localStorage.setItem('bg-image', JSON.stringify(image));
+    HeroBgImage = image.url;
   }
 
   // Default case: If Image is still not set, set the first image.
@@ -108,9 +137,12 @@ function Dashboard({ user }) {
     return strTime;
   }
 
+  setCurrentBGImage();
+
   var defaultSwitchLogo = localStorage.getItem('switchLogo') === 'true';
   const [switchLogo, setSwitchLogo] = useState(defaultSwitchLogo);
   const [cTime, setTime] = useState(getCurrentTime());
+  const [backgroundImage, setBackgroundImage] = useState(HeroBgImage);
 
   useEffect(() => {
     if (switchLogo && !timerIsSet) {
@@ -147,7 +179,7 @@ function Dashboard({ user }) {
   // }, 1000);
 
   callGuide();
-  setCurrentBGImage();
+  
   // verifyAdsVisibility();
 
   useEffect(() => {
@@ -258,13 +290,22 @@ function Dashboard({ user }) {
     window.open(url, "_self");
     setQuery("");
   };
+  
+  const onBackgroundChange = () => {
+    resetImagesCollection();
+    
+    let image = images[Math.floor(Math.random()*images.length)];
+    localStorage.setItem('bg-image', JSON.stringify(image));
+
+    setBackgroundImage(image.url);
+  }
 
   // Dashboard page HTML.
   return (
     <div
       className="dashboard-main-container main-container h-[100vh] flex flex-col"
       style={{
-        backgroundImage: `url(${HeroBgImage})`,
+        backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
@@ -328,11 +369,7 @@ function Dashboard({ user }) {
         {/* {hasHiddenAds === false && getAdsHtml()} */}
       </div>
       <nav className="footer-container p-2 flex items-center space-x-3">
-        <Link id="profileLink" to="/profile">
-          <button className="settings p-2 rounded-full bg-white">
-            <BsGear fontSize={28} height="22" width="22" />
-          </button>
-        </Link>
+        <Settings changeBackground={() => onBackgroundChange()} />
       </nav>
     </div>
   );

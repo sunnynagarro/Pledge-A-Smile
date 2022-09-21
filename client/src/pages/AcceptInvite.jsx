@@ -14,7 +14,7 @@ function withParams(Component) {
     return props => <AcceptInvite {...props} params={useParams()} />;
   }
 
-const HeroBgImage = require('../assets/hero-bg-27.webp');
+const HeroBgImage = require('../assets/background-images/nature/hero-bg-27.webp');
 
 class AcceptInvite extends Component {
 
