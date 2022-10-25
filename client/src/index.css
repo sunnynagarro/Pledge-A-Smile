@@ -36,10 +36,12 @@ form.search-container {
   height: 44px;
   padding: 0.33rem 0.5rem;
 }
-form.search-container:hover, form.search-container:focus-within {
+form.search-container:hover,
+form.search-container:focus-within {
   background: white;
 }
-form.search-container:hover .search-input::placeholder, form.search-container:focus-within .search-input::placeholder {
+form.search-container:hover .search-input::placeholder,
+form.search-container:focus-within .search-input::placeholder {
   color: #999;
 }
 form.search-container:hover .search-input {
@@ -48,26 +50,31 @@ form.search-container:hover .search-input {
 .search-input {
   color: white;
 }
-.search-input:hover, .search-input:focus {
+.search-input:hover,
+.search-input:focus {
   color: #444;
   background: white;
 }
-.search-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.search-input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
   opacity: 1; /* Firefox */
 }
 
-.search-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.search-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
   color: white;
 }
 
-.search-input::-ms-input-placeholder { /* Microsoft Edge */
+.search-input::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: white;
 }
 .search-svg {
   color: white;
 }
-.search-container:hover .search-icon .search-svg, .search-input:focus + .search-icon .search-svg {
+.search-container:hover .search-icon .search-svg,
+.search-input:focus + .search-icon .search-svg {
   color: #444;
 }
 .header-container {
@@ -126,7 +133,7 @@ form.search-container:hover .search-input {
 .modal-container {
   border-radius: 10px;
   padding: 20px;
-  background-color: #E7EDF1;
+  background-color: #e7edf1;
   font-size: 14px;
 }
 .buddies-modal-header {
@@ -145,34 +152,34 @@ div.modal-header {
 }
 .modal-body input[type="text"] {
   color: #333;
-  background-color: #E7EDF1;
+  background-color: #e7edf1;
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 2px 10px;
   width: 155px;
 }
-.modal-body input:focus{
+.modal-body input:focus {
   outline: none;
 }
 .top-arrow-left {
   position: absolute;
   left: 12px;
   top: -7px;
-  color: #E7EDF1;
+  color: #e7edf1;
   font-size: 14px;
 }
 .top-arrow-right {
   position: absolute;
   right: 12px;
   top: -7px;
-  color: #E7EDF1;
+  color: #e7edf1;
   font-size: 14px;
 }
 .bottom-arrow-left {
   position: absolute;
   left: 12px;
   bottom: -7px;
-  color: #E7EDF1;
+  color: #e7edf1;
   font-size: 14px;
   color: white;
 }
@@ -343,7 +350,8 @@ main.container h2 {
   flex-wrap: wrap;
   gap: 10px;
 }
-.album-images-list, .albums-list-container {
+.album-images-list,
+.albums-list-container {
   margin-top: 15px;
 }
 .settings-modal .view-container .bordered-container {
@@ -414,17 +422,17 @@ main.container h2 {
   border-radius: 4px;
 }
 .settings-modal .albums-list-container .all-images-thumbnail {
-  background-image: url('assets/thumbnails/all-thumbnail.png');
+  background-image: url("assets/thumbnails/all-thumbnail.png");
 }
 .settings-modal .albums-list-container .nature-images-thumbnail {
-  background-image: url('assets/thumbnails/nature-thumbnail.png');
+  background-image: url("assets/thumbnails/nature-thumbnail.png");
 }
 .settings-modal .albums-list-container .architecture-images-thumbnail {
-  background-image: url('assets/thumbnails/architecture-thumbnail.png');
+  background-image: url("assets/thumbnails/architecture-thumbnail.png");
 }
-/* .settings-modal .albums-list-container .flowers-images-thumbnail {
-  background-image: url('assets/hero-bg-19.webp');
-} */
+.settings-modal .albums-list-container .pets-images-thumbnail {
+  background-image: url("assets/thumbnails/pet-thumbnail.jpg");
+}
 .settings-modal .nav .nav-item {
   margin: 0 0 15px;
   cursor: pointer;
@@ -509,15 +517,15 @@ main.container h2 {
   max-width: 300px;
 }
 
-.gc-tooltip[data-guidechimp-position=bottom] .gc-progressbar {
+.gc-tooltip[data-guidechimp-position="bottom"] .gc-progressbar {
   border-radius: 0 0 0 15px;
   left: 5px;
-  background-color: #28AF89;
+  background-color: #28af89;
 }
 
 .gc-progressbar {
   left: 4px;
-  background-color: #28AF89;
+  background-color: #28af89;
   border-radius: 15px 0 0 0;
 }
 
@@ -525,15 +533,17 @@ main.container h2 {
   border-radius: 15px 15px 0 0;
   width: 97.5% !important;
   left: 4px;
-  background-color: #28AF89;
+  background-color: #28af89;
 }
 
-.gc-pagination-theme-circles .gc-pagination-item.gc-pagination-active, .gc-pagination-theme-circles .gc-pagination-item:hover {
-  background-color: #28AF89;
+.gc-pagination-theme-circles .gc-pagination-item.gc-pagination-active,
+.gc-pagination-theme-circles .gc-pagination-item:hover {
+  background-color: #28af89;
 }
 
-.gc-navigation-prev:hover, .gc-navigation-next:hover {
-  border-color: #28AF89;
+.gc-navigation-prev:hover,
+.gc-navigation-next:hover {
+  border-color: #28af89;
 }
 
 .gc-overlay {
@@ -555,8 +565,8 @@ main.container h2 {
   margin: auto;
 }
 
-[hidden]{
-  display:none;
+[hidden] {
+  display: none;
 }
 .logo-container {
   margin-bottom: 10px;
@@ -566,7 +576,8 @@ main.container h2 {
 .logo-container:hover .right img {
   display: inline;
 }
-.logo-container .left, .logo-container .right {
+.logo-container .left,
+.logo-container .right {
   flex: 1 0 50px;
   display: inline-flex;
   align-items: center;
@@ -613,26 +624,28 @@ main.container h2 {
   justify-content: space-between;
 }
 .modal-footer .success-button {
-  background-color: #28AF89;
+  background-color: #28af89;
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
 }
 .modal-footer .failure-button {
-  color: #28AF89;
+  color: #28af89;
 }
 .group .group-heading {
   cursor: pointer;
   font-weight: 800;
   color: #333;
 }
-.group .header-row, .group .group-list-row {
+.group .header-row,
+.group .group-list-row {
   height: 22px;
 }
 .group .header-row:hover .group-options {
   display: block;
 }
-.group .group-heading, .group .member-name {
+.group .group-heading,
+.group .member-name {
   min-height: 28px;
   display: inline-flex;
   flex: 1 1 auto;
@@ -655,7 +668,9 @@ main.container h2 {
   background: #ddd;
   border-radius: 10px;
 }
-.group .group-impact, .group .group-member, .group .group-icon {
+.group .group-impact,
+.group .group-member,
+.group .group-icon {
   color: #28af89;
   font-weight: 800;
 }
@@ -726,7 +741,7 @@ main.container h2 {
   border-radius: 5px;
 }
 .group-rename-modal .modal-footer button {
-  background: #28AF89;
+  background: #28af89;
   color: white;
   padding: 5px 10px;
   border-radius: 10px;
@@ -808,7 +823,7 @@ main.container h2 {
 }
 
 .accept-invite-modal .modal-footer .full-wide button {
-  background-color: #EEB905;
+  background-color: #eeb905;
   padding: 7px 15px;
   color: white;
   border-radius: 10px;
@@ -818,7 +833,7 @@ main.container h2 {
 }
 
 .accept-invite-modal .modal-footer .full-wide .text-yellow {
-  color: #EEB905;
+  color: #eeb905;
 }
 
 .accept-invite-modal .modal-footer .full-wide {
@@ -885,7 +900,7 @@ main.container h2 {
   color: white;
   padding: 5px 10px;
 }
-.external-link-container{
+.external-link-container {
   margin-top: 15px;
 }
 .external-link-container .external-link-input {
