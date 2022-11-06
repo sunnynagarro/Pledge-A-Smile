@@ -25,7 +25,8 @@ function GlobalImpact() {
       if (
         isModalOpen &&
         modalRef.current &&
-        !modalRef.current.contains(event.target)
+        !modalRef.current.contains(event.target) &&
+        !event.target.className.includes("global-button")
       ) {
         setIsModalOpen(false);
       }

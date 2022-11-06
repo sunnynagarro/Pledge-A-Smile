@@ -25,7 +25,8 @@ function UserImpact({ userId }) {
       if (
         isModalOpen &&
         modalRef.current &&
-        !modalRef.current.contains(event.target)
+        !modalRef.current.contains(event.target) &&
+        !event.target.className.includes("user-impact")
       ) {
         setIsModalOpen(false);
       }

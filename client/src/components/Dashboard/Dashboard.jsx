@@ -15,7 +15,7 @@ import Logo from "../../assets/logo-dashboard.png";
 // import Invite from "./DashboardComponents/Invite";
 import GlobalImpact from "./GlobalImpact/GlobalImpact";
 import UserImpact from "./UserImpact/UserImpact";
-// import GoogleAds from "./GoogleAds";
+import GoogleAds from "../GoogleAds";
 import QuickLinks from "./QuickLinks/QuickLinks";
 import TabbingBuddies from "./MyBuddies/TabbingBuddies";
 import Settings from "./Settings/Settings";
@@ -158,35 +158,35 @@ function Dashboard({ user }) {
       timerIsSet = true;
     }
   });
-  // const [hasHiddenAds, setHasHiddenAds] = useState(false);
+  const [hasHiddenAds, setHasHiddenAds] = useState(false);
 
-  // function addMinutes(date, minutes) {
-  //   return new Date(date.getTime() + minutes * 60000);
-  // }
+  function addMinutes(date, minutes) {
+    return new Date(date.getTime() + minutes * 60000);
+  }
 
-  // let verifyAdsVisibility = () => {
-  //   let hiddenAdsTimeInMinute = 1;
-  //   let currentTime = new Date();
-  //   let adanalytics = JSON.parse(localStorage.getItem('adanalytics'));
+  let verifyAdsVisibility = () => {
+    let hiddenAdsTimeInMinute = 1;
+    let currentTime = new Date();
+    let adanalytics = JSON.parse(localStorage.getItem('adanalytics'));
 
-  //   if (adanalytics !== null && adanalytics !== undefined) {
-  //     if (addMinutes(new Date(adanalytics.eventTime), hiddenAdsTimeInMinute) < currentTime) {
-  //       if (hasHiddenAds === true) {
-  //         setHasHiddenAds(false);
-  //       }
-  //     } else if (hasHiddenAds === false) {
-  //         setHasHiddenAds(true);
-  //     }
-  //   }
-  // };
+    if (adanalytics !== null && adanalytics !== undefined) {
+      if (addMinutes(new Date(adanalytics.eventTime), hiddenAdsTimeInMinute) < currentTime) {
+        if (hasHiddenAds === true) {
+          setHasHiddenAds(false);
+        }
+      } else if (hasHiddenAds === false) {
+          setHasHiddenAds(true);
+      }
+    }
+  };
 
-  // setInterval(() => {
-  //   verifyAdsVisibility();
-  // }, 1000);
+  setInterval(() => {
+    verifyAdsVisibility();
+  }, 1000);
 
   callGuide();
 
-  // verifyAdsVisibility();
+  verifyAdsVisibility();
 
   useEffect(() => {
     if (
@@ -226,61 +226,61 @@ function Dashboard({ user }) {
     }
   }
 
-  // const hideAds = () => {
-  //   let obj = {
-  //     hidden: true,
-  //     eventTime: new Date().toString()
-  //   };
-  //   localStorage.setItem('adanalytics', JSON.stringify(obj));
-  //   // setHasHiddenAds(true);
-  // };
+  const hideAds = () => {
+    let obj = {
+      hidden: true,
+      eventTime: new Date().toString()
+    };
+    localStorage.setItem('adanalytics', JSON.stringify(obj));
+    setHasHiddenAds(true);
+  };
 
-  // const getAdsHtml = () => {
-  //   return (
-  // <div hidden={hasHiddenAds} className="advertisements-conatiner flex-1 grid grid-cols-1 lg:grid-cols-[1fr_1fr_400px] grid-rows-5 w-full mt-2">
-  //   <div onClick={hideAds} hidden={hasHiddenAds} className="rectangle-advertisement flex items-center justify-center col-start-1 lg:col-start-2 row-start-5 overflow-hidden">
-  //     <GoogleAds
-  //       clientId="ca-app-pub-3940256099942544"
-  //       slotId="2934735716"
-  //       smw="234px"
-  //       smh="60px"
-  //       mdw="468px"
-  //       mdh="60px"
-  //       lgw="720px"
-  //       lgh="90px"
-  //     />
-  //   </div>
-  //   <div onClick={hideAds} hidden={hasHiddenAds} className="square-advertisement flex items-center justify-center col-start-1 lg:col-start-3 row-start-2 row-span-2 overflow-auto">
-  //     {user.impactLevel > 2 && (
-  //       <GoogleAds
-  //         clientId="ca-app-pub-3940256099942544"
-  //         slotId="3419835294"
-  //         smw="125px"
-  //         smh="125px"
-  //         mdw="200px"
-  //         mdh="200px"
-  //         lgw="200px"
-  //         lgh="200px"
-  //       />
-  //     )}
-  //   </div>
-  //   <div onClick={hideAds} hidden={hasHiddenAds} className="square-advertisement flex items-center justify-center col-start-1 lg:col-start-3 row-start-4 row-span-2 overflow-auto">
-  //     {user.impactLevel > 1 && (
-  //       <GoogleAds
-  //         clientId="ca-app-pub-3940256099942544"
-  //         slotId="6300978111"
-  //         smw="125px"
-  //         smh="125px"
-  //         mdw="200px"
-  //         mdh="200px"
-  //         lgw="200px"
-  //         lgh="200px"
-  //       />
-  //     )}
-  //   </div>
-  // </div>
-  //   );
-  // };
+  const getAdsHtml = () => {
+    return (
+  <div hidden={hasHiddenAds} className="advertisements-conatiner flex-1 grid grid-cols-1 lg:grid-cols-[1fr_1fr_400px] grid-rows-5 w-full mt-2">
+    <div onClick={hideAds} hidden={hasHiddenAds} className="rectangle-advertisement flex items-center justify-center lg:col-start-2 col-start-3 row-start-5 overflow-hidden">
+      <GoogleAds
+        clientId="ca-pub-5067002529301261"
+        slotId="2151146654"
+        smw="234px"
+        smh="60px"
+        mdw="468px"
+        mdh="60px"
+        lgw="720px"
+        lgh="90px"
+      />
+    </div>
+    <div onClick={hideAds} hidden={hasHiddenAds} className="square-advertisement flex items-center justify-center col-start-4 lg:row-start-2 row-start-1 row-span-2 overflow-auto">
+      {user.impactLevel > 2 && (
+        <GoogleAds
+          clientId="ca-pub-5067002529301261"
+          slotId="8333411625"
+          smw="125px"
+          smh="125px"
+          mdw="200px"
+          mdh="200px"
+          lgw="200px"
+          lgh="200px"
+        />
+      )}
+    </div>
+    <div onClick={hideAds} hidden={hasHiddenAds} className="square-advertisement flex items-center justify-center col-start-4 lg:row-start-4 row-start-3 row-span-2 overflow-auto">
+      {user.impactLevel > 1 && (
+        <GoogleAds
+          clientId="ca-pub-5067002529301261"
+          slotId="3081084945"
+          smw="125px"
+          smh="125px"
+          mdw="200px"
+          mdh="200px"
+          lgw="200px"
+          lgh="200px"
+        />
+      )}
+    </div>
+  </div>
+    );
+  };
 
   // Switch between logo and time.
   const onSwitchLogo = () => {
@@ -377,7 +377,7 @@ function Dashboard({ user }) {
             </button>
           </form>
         </div>
-        {/* {hasHiddenAds === false && getAdsHtml()} */}
+        {hasHiddenAds === false && getAdsHtml()}
       </div>
       <nav className="footer-container p-2 flex items-center space-x-3">
         <Settings changeBackground={() => onBackgroundChange()} />
