@@ -28,6 +28,7 @@ import {
   petsBgImages,
 } from "../../constants/bgImages.js";
 import { guideTour } from "../../constants/guideList.js";
+import Shortcuts from "./Shortcuts/Shortcuts";
 
 let images = [];
 const tour = guideTour;
@@ -376,6 +377,7 @@ function Dashboard({ user }) {
               <BiSearch fontSize={24} className="search-svg" />
             </button>
           </form>
+          <Shortcuts />
         </div>
         {hasHiddenAds === false && getAdsHtml()}
       </div>

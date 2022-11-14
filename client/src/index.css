@@ -81,7 +81,7 @@ form.search-container:hover .search-input {
 .header-container {
   justify-content: space-between;
   padding: 0.7rem;
-  z-index: 1;
+  z-index: 100;
 }
 .header-container .right {
   display: flex;
@@ -939,4 +939,42 @@ main.container h2 {
 
 button.header-button > *, button.settings-button > * {
   pointer-events: none;
+}
+
+.shortcuts-container {
+  z-index: 10;
+  margin-top: 20px;
+}
+
+.shortcuts-container ul {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 577px;
+  align-items: center;
+}
+
+.shortcut-item {
+  flex: 1 0 21%;
+  align-items: center;
+  border-radius: 8px;
+  width: 112px;
+  height: 120px;
+  cursor: pointer;
+}
+
+.shortcut-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.shortcut-icon {
+  border-radius: 25px;
+  padding: 13px;
+  background-color: white;
+  display: inline-block;
+  color: black;
+}
+
+.shortcut-icon i {
+  width: 20px;
+  height: 20px;
 }
