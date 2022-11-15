@@ -1,6 +1,6 @@
-import { SERVER_BASE_URL } from "../config";
+import { BACKEND_URL } from "../config";
 
-let API_URL = SERVER_BASE_URL + "/backend/api/userInfo";
+let API_URL = BACKEND_URL + "/api/userInfo";
 
 export const updateImpactLevel = async (userId, level) => {
   let response = await fetch(API_URL + "/updateImpactLevel", {

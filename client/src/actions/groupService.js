@@ -1,6 +1,6 @@
-import { SERVER_BASE_URL } from "../config";
+import { BACKEND_URL } from "../config";
 
-let API_URL = SERVER_BASE_URL + "/backend/api/groups";
+let API_URL = BACKEND_URL + "/api/groups";
 
 export const fetchGroups = async (userId) => {
   let response = await fetch(API_URL + "?userId=" + userId, {

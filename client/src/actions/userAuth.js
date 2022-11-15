@@ -1,6 +1,6 @@
-import { SERVER_BASE_URL } from "../config";
+import { BACKEND_URL } from "../config";
 
-let API_URL = SERVER_BASE_URL + "/backend/auth";
+let API_URL = BACKEND_URL + "/auth";
 
 export const emailLogin = async (reqBody) => {
   let response = await fetch(API_URL + "/emailLogin", {
