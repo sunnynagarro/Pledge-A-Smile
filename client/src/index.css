@@ -972,9 +972,16 @@ button.header-button > *, button.settings-button > * {
   background-color: white;
   display: inline-block;
   color: black;
+  width: 48px;
+  height: 48px;
+  margin-top: 16px;
 }
 
 .shortcut-icon i {
   width: 20px;
   height: 20px;
+}
+
+.shortcut-title {
+  margin-top: 6px;
 }
