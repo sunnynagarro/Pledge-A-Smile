@@ -1,4 +1,6 @@
-let API_URL = "https://tab.pledgeasmile.com/backend/api/userInfo";
+import { SERVER_BASE_URL } from "../config";
+
+let API_URL = SERVER_BASE_URL + "/backend/api/userInfo";
 
 export const updateImpactLevel = async (userId, level) => {
   let response = await fetch(API_URL + "/updateImpactLevel", {

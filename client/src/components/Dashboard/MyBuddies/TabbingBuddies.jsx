@@ -11,6 +11,8 @@ import AddEditGroup from "./AddEditGroup";
 import GroupsList from "./GroupsList";
 import InviteBuddies from "./InviteBuddies";
 
+import { SERVER_BASE_URL } from "../../../config";
+
 class TabbingBuddies extends Component {
 
     constructor(props) {
@@ -90,7 +92,7 @@ class TabbingBuddies extends Component {
                     <button onClick={() => this.setState(old => ({ inviting: !old.inviting, isCreateGroupModalOpen: false }))} className="success-button">Invite Buddies</button>
                 </div> */}
                 {this.state.isCreateGroupModalOpen && <AddEditGroup closeModal={this.toggleCreateGroupModal} />}
-                {this.state.inviting && <InviteBuddies inviteUrl={"https://tab.pledgeasmile.com/login?referralId=" + this.state.currentUser.referralId} />}
+                {this.state.inviting && <InviteBuddies inviteUrl={SERVER_BASE_URL + "/login?referralId=" + this.state.currentUser.referralId} />}
             </div>
         );
     };

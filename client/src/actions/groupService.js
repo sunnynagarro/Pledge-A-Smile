@@ -1,4 +1,6 @@
-let API_URL = "https://tab.pledgeasmile.com/backend/api/groups";
+import { SERVER_BASE_URL } from "../config";
+
+let API_URL = SERVER_BASE_URL + "/backend/api/groups";
 
 export const fetchGroups = async (userId) => {
   let response = await fetch(API_URL + "?userId=" + userId, {

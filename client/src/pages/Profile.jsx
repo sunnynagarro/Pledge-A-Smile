@@ -54,7 +54,7 @@ function Profile() {
     });
   };
   // const referralLink =
-  //   "https://tab.pledgeasmile.com/login?referralId=" + user.referralId;
+  //   SERVER_BASE_URL + "/login?referralId=" + user.referralId;
 
   // const copyReferralLink = () => {
   //   navigator.clipboard.writeText(referralLink);

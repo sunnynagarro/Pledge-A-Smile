@@ -1,4 +1,6 @@
-let API_URL = "https://tab.pledgeasmile.com/backend/auth";
+import { SERVER_BASE_URL } from "../config";
+
+let API_URL = SERVER_BASE_URL + "/backend/auth";
 
 export const emailLogin = async (reqBody) => {
   let response = await fetch(API_URL + "/emailLogin", {

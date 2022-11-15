@@ -6,10 +6,12 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 import { ImArrowUp } from "react-icons/im";
 import { FiCopy } from "react-icons/fi";
 
+import { SERVER_BASE_URL } from "../config";
+
 function Invite({ referralId, text }) {
   const modalRef = useRef();
   const [isInviteModalOpen, setIsInviteModalOpen] = useState(false);
-  const referralLink = "https://tab.pledgeasmile.com/login?referralId=" + referralId;
+  const referralLink = SERVER_BASE_URL + "/login?referralId=" + referralId;
   const copyLink = () => {
     navigator.clipboard.writeText(referralLink);
     toast.success("Copied to clipboard");

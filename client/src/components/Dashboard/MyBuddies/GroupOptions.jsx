@@ -6,6 +6,8 @@ import { deleteGroup, leaveGroup } from "../../../actions/groupService";
 import AddEditGroup from "./AddEditGroup";
 import InviteBuddies from "./InviteBuddies";
 
+import { SERVER_BASE_URL } from "../../../config";
+
 class GroupOptions extends Component {
 
     constructor(props) {
@@ -38,7 +40,7 @@ class GroupOptions extends Component {
                     </ul>
                 </div>
                 {this.state.renaming && <AddEditGroup group={this.state.group} isEdit="true" closeModal={this.toggleEditGroupModal} />}
-                {this.state.inviting && <InviteBuddies group={this.state.group} isGroupInvitation="true" inviteUrl={"https://tab.pledgeasmile.com/g/" + this.state.group?.invitationId} />}
+                {this.state.inviting && <InviteBuddies group={this.state.group} isGroupInvitation="true" inviteUrl={SERVER_BASE_URL + "/g/" + this.state.group?.invitationId} />}
             </div>
         );
     }

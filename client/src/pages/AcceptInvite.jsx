@@ -10,6 +10,8 @@ import { getInvitationAdmin, acceptGroupInvitation } from "../actions/groupServi
 // Toast
 import { toast } from "react-toastify";
 
+import { SERVER_BASE_URL } from "../config";
+
 function withParams(Component) {
     return props => <AcceptInvite {...props} params={useParams()} />;
   }
@@ -138,7 +140,7 @@ class AcceptInvite extends Component {
             toast.success("You have accepted the invite.");
         }
         setTimeout(() => {
-            window.open('https://tab.pledgeasmile.com', '_self');
+            window.open(SERVER_BASE_URL, '_self');
         }, 2000);
     }
 
@@ -146,7 +148,7 @@ class AcceptInvite extends Component {
     cancel() {
         toast.success("You have cancelled the invite.");
         setTimeout(() => {
-            window.open('https://tab.pledgeasmile.com', '_self');
+            window.open(SERVER_BASE_URL, '_self');
         }, 2000);
     }
 }
