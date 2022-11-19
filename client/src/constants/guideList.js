@@ -24,9 +24,9 @@ export const guideTour = [
       position: 'bottom'
     },
     {
-      element: '#profileLink',
-      title: 'Profile',
-      description: 'You can see your basic information and can increase your overall impact within your profile.',
+      element: '#settingsLink',
+      title: 'Settings',
+      description: 'You can manage your background, see your basic information and can increase your overall impact within your profile.',
       position: 'top'
     },
   ];

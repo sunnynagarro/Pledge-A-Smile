@@ -34,7 +34,7 @@ class Settings extends Component {
 
     render() {
         return (
-            <div>
+            <div id="settingsLink">
                 <button onClick={() => this.setState(old => ({isOpen: !old.isOpen}))} className="settings-button p-3 rounded-full bg-white">
                     <BsGear fontSize={28} height="22" width="22" />
                 </button>
