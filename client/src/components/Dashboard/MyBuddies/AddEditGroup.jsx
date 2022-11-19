@@ -26,8 +26,8 @@ class AddEditGroup extends Component {
             <div className="modal-container create-group-modal z-50 p-3 drop-shadow-lg rounded-md absolute left-25 top-5 mt-2 table w-[150px] md:w-[150px]">
                 <div className="create-group-container">
                     <div className="modal-header">
-                        <h2 hidden={this.state.isEdit} className="left">Create a new group</h2>
-                        <h2 hidden={!this.state.isEdit} className="left">Edit group</h2>
+                        <h2 hidden={this.state.isEdit}>Create a new group</h2>
+                        <h2 hidden={!this.state.isEdit}>Edit group</h2>
                     </div>
                     <div className="modal-body">
                         <input value={this.state.newGroupName} onChange={evt => this.updateGroupNameValue(evt)} type="text" placeholder="Group name" />

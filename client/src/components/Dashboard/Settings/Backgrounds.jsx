@@ -74,7 +74,7 @@ class Backgrounds extends Component {
               >
                 <span className="tile-list-image all-images-thumbnail"></span>
                 <span
-                  onClick={() => this.setAlbumAsBackground("All")}
+                  onClick={(e) => this.setAlbumAsBackground(e, "All")}
                   className={
                     "select-album " +
                     (this.state.background === "All" ? "active" : "")
@@ -90,7 +90,7 @@ class Backgrounds extends Component {
               >
                 <span className="tile-list-image nature-images-thumbnail"></span>
                 <span
-                  onClick={() => this.setAlbumAsBackground("Nature")}
+                  onClick={(e) => this.setAlbumAsBackground(e, "Nature")}
                   className={
                     "select-album " +
                     (this.state.background === "Nature" ? "active" : "")
@@ -106,7 +106,7 @@ class Backgrounds extends Component {
               >
                 <span className="tile-list-image architecture-images-thumbnail"></span>
                 <span
-                  onClick={() => this.setAlbumAsBackground("Architecture")}
+                  onClick={(e) => this.setAlbumAsBackground(e, "Architecture")}
                   className={
                     "select-album " +
                     (this.state.background === "Architecture" ? "active" : "")
@@ -122,7 +122,7 @@ class Backgrounds extends Component {
               >
                 <span className="tile-list-image pets-images-thumbnail"></span>
                 <span
-                  onClick={() => this.setAlbumAsBackground("Pets")}
+                  onClick={(e) => this.setAlbumAsBackground(e, "Pets")}
                   className={
                     "select-album " +
                     (this.state.background === "Pets" ? "active" : "")
@@ -150,7 +150,8 @@ class Backgrounds extends Component {
   }
 
   // Set background.
-  setAlbumAsBackground(albumName) {
+  setAlbumAsBackground(e, albumName) {
+    e.stopPropagation();
     localStorage.setItem("background", albumName);
     localStorage.setItem("backgroundType", "albums");
     localStorage.removeItem("externalLink");

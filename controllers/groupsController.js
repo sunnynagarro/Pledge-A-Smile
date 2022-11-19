@@ -2,10 +2,10 @@ const asyncHandler = require("express-async-handler");
 
 // utils
 const sendError = require("../utils/sendError");
+const GroupService = require("../services/groupService");
+
 // models
 const Group = require("../models/Group");
-
-const GroupService = require("../services/groupService");
 const GroupMembership = require("../models/GroupMembership");
 const User = require("../models/User");
 

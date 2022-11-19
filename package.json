@@ -11,7 +11,7 @@
   "keywords": [
     "pledge-a-smile"
   ],
-  "author": "Deepan Chakravarthi",
+  "author": "Pledge A Smile",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
