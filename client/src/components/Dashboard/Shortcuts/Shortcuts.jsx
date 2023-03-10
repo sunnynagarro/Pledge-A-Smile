@@ -184,6 +184,14 @@ class Shortcuts extends Component {
         return (
             <div className="shortcuts-container">
                 <div className="shortcuts">
+                    <a key="amazonKey" className="shortcut-item" href="https://amzn.to/3YlDYtL">
+                        <div className="shortcut-icon">
+                            <img src={"https://www.google.com/s2/favicons?domain=amazon.in"} alt="Shortcut favicon" />
+                        </div>
+                        <div className="shortcut-title">
+                            <small>Amazon</small>
+                        </div>
+                    </a>
                     {this.state.shortcuts?.map((shortcut, index) =>
                         <a key={index} className="shortcut-item" href={shortcut.url}>
                             <div className="more-actions" onClick={(e) => this.openActionsModal(e, shortcut)}>
@@ -197,7 +205,7 @@ class Shortcuts extends Component {
                             </div>
                         </a>
                     )}
-                    <button hidden={this.state.shortcuts?.length >= 10} href="#" className="shortcut-item add-shortcut-item" onClick={(e) => this.addShortcut(e)}>
+                    <button hidden={this.state.shortcuts?.length >= 9} href="#" className="shortcut-item add-shortcut-item" onClick={(e) => this.addShortcut(e)}>
                         <div className="shortcut-icon">
                             <BsPlusLg />
                         </div>
