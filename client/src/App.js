@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import Profile from "./pages/Profile";
 import ResetPassword from "./pages/ResetPassword";
+import AcceptInvite from "./pages/AcceptInvite";
 
 // provider
 import { UserProvider } from "./context/UserContext";
@@ -26,6 +27,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/g/:invitationId" element={<AcceptInvite />} />
               <Route
                 path="/reset/:resetPasswordToken"
                 element={<ResetPassword />}

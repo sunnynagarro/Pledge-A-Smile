@@ -11,5 +11,1211 @@
 body,
 input,
 button {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  overflow: hidden;
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+}
+
+.dashboard-main-container {
+  background-color: #555;
+}
+
+.greeting {
+  font-size: 32px;
+  line-height: 1;
+}
+
+form.search-container {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  height: 44px;
+  padding: 0.33rem 0.5rem;
+  z-index: 1;
+}
+
+form.search-container:hover,
+form.search-container:focus-within {
+  background: white;
+}
+
+form.search-container:hover .search-input::placeholder,
+form.search-container:focus-within .search-input::placeholder {
+  color: #999;
+}
+
+form.search-container:hover .search-input {
+  color: #444;
+}
+
+.search-input {
+  color: white;
+}
+
+.search-input:hover,
+.search-input:focus {
+  color: #444;
+  background: white;
+}
+
+.search-input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+.search-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+.search-input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+.search-svg {
+  color: white;
+}
+
+.search-container:hover .search-icon .search-svg,
+.search-input:focus+.search-icon .search-svg {
+  color: #444;
+}
+
+.header-container {
+  justify-content: space-between;
+  padding: 0.7rem;
+  z-index: 100;
+}
+
+.header-container .right {
+  display: flex;
+}
+
+.header-container .right>div {
+  margin-left: 10px;
+}
+
+.header-button-container {
+  height: 36px;
+}
+
+.header-button {
+  background: transparent;
+  border: 1px solid white;
+  height: 36px;
+  color: white;
+}
+
+.header-quick-links-icon {
+  border: none;
+  color: #ddd;
+}
+
+.header-quick-links-icon:hover {
+  color: #fff;
+}
+
+.user-impact svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header-button p {
+  margin-right: 3px;
+}
+
+.invite-button {
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.invite-button svg {
+  width: 20px;
+  height: 20px;
+  display: inline;
+}
+
+.global-button {
+  padding: 10px 4px 10px 10px;
+}
+
+.settings-button {
+  background: transparent;
+  color: white;
+  z-index: 1;
+}
+
+.settings-button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.modal-container {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #e7edf1;
+  font-size: 14px;
+  color: #333;
+}
+
+.buddies-modal-header {
+  justify-content: space-between;
+}
+
+.modal-container .buddies-modal-header svg {
+  width: 22px;
+  height: 22px;
+}
+
+.modal-header {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+div.modal-header {
+  margin-bottom: 20px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.modal-body label {
+  color: black;
+  text-align: left;
+  margin-left: 2px;
+  cursor: pointer;
+  font-weight: 200;
+}
+
+.modal-body input[type="text"] {
+  color: #333;
+  background-color: #e7edf1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 2px 10px;
+  min-width: 155px;
+  width: 100%;
+  margin: 10px 0;
+  display: block;
+  height: 35px;
+}
+
+.modal-body input:focus {
+  outline: none;
+}
+
+.top-arrow-left {
+  position: absolute;
+  left: 12px;
+  top: -7px;
+  color: #e7edf1;
+  font-size: 14px;
+}
+
+.top-arrow-right {
+  position: absolute;
+  right: 12px;
+  top: -7px;
+  color: #e7edf1;
+  font-size: 14px;
+}
+
+.bottom-arrow-left {
+  position: absolute;
+  left: 12px;
+  bottom: -7px;
+  color: #e7edf1;
+  font-size: 14px;
+  color: white;
+}
+
+.static-quick-links .top-arrow-right {
+  color: white;
+}
+
+.copy-link-container {
+  display: flex;
+  gap: 10px;
+}
+
+.copy-link-textbox {
+  border-radius: 5px;
+  height: 35px;
+  background-color: white;
+  font-size: 14px;
+}
+
+.green-button {
+  border-radius: 20px;
+  height: 35px;
+  white-space: nowrap;
+  background-color: #28af89;
+  font-size: 14px;
+}
+
+.green-button svg {
+  display: inline;
+  margin-right: 5px;
+}
+
+.custom-modal {
+  border-radius: 10px !important;
+}
+
+.invite-info {
+  margin-bottom: 20px;
+}
+
+.invite-info p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.modal-horizontal-line {
+  margin-top: 15px;
+  border-top: 1px solid #ccc;
+}
+
+.modal-count .count {
+  font-size: 22px;
+  color: #28af89;
+}
+
+.modal-count .count-icon {
+  background-color: #28af89;
+  color: white;
+}
+
+.modal-sub-title {
+  font-size: 13px;
+  color: #888;
+}
+
+.profile-page header {
+  box-shadow: 10px 10px 20px #eee;
+}
+
+main.container h2 {
+  color: #333;
+}
+
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 auto;
+}
+
+.main-container-inner {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+.profile-container {
+  display: flex;
+  gap: 20px;
+}
+
+.profile-container>div {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.left-container {
+  width: 30%;
+}
+
+.center-container {
+  padding: 20px;
+  width: 25%;
+}
+
+.right-container {
+  padding: 20px;
+  width: 45%;
+}
+
+.profile-container .head-title {
+  text-align: center;
+  color: #444;
+  background-color: #eafaf5;
+  border-radius: 10px 10px 0 0;
+  padding: 20px;
+}
+
+.horizontal-divider {
+  margin: 20px 0;
+  border-top: 1px solid #eee;
+}
+
+.profile-body {
+  padding: 20px;
+  gap: 20px;
+}
+
+.profile-body .invite-container {
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.profile-body .invite-container input {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.profile-footer-container {
+  margin-top: 20px;
+}
+
+.impact-skelaton {
+  background-color: #eee;
+  border: 1px solid white;
+}
+
+@media only screen and (max-width: 1200px) {
+  .center-content {
+    margin-top: 0;
+  }
+}
+
+.static-quick-links {
+  position: absolute;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  right: 0;
+  top: 42px;
+  z-index: 99;
+  font-size: 13px;
+  color: #333;
+}
+
+.settings-modal {
+  position: absolute;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  left: 12px;
+  bottom: 52px;
+  z-index: 99;
+  font-size: 13px;
+  color: #333;
+  height: 450px;
+}
+
+.settings-modal nav {
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  width: 130px;
+}
+
+.settings-modal .view-container {
+  width: 350px;
+  overflow: hidden;
+}
+
+.settings-modal .view-container h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.settings-modal .view-container .tile-selection-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.album-images-list,
+.albums-list-container {
+  margin-top: 15px;
+}
+
+.settings-modal .view-container .bordered-container {
+  height: 96px;
+  text-align: center;
+  border: 1px solid #666;
+  border-radius: 4px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  width: 31%;
+  overflow: hidden;
+  position: relative;
+}
+
+.settings-modal .view-container .bordered-container .select-album {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.settings-modal .view-container .bordered-container .select-album svg {
+  color: gray;
+  border-radius: 20px;
+  width: 17px;
+  height: 17px;
+  background-color: white;
+  display: none;
+}
+
+.settings-modal .view-container .bordered-container .select-album.active svg {
+  color: #28af89;
+  display: block;
+}
+
+.settings-modal .view-container .bordered-container:hover .select-album svg {
+  display: block;
+}
+
+.settings-modal .view-container .bordered-container .select-album svg:hover {
+  color: #28af89;
+}
+
+.settings-modal .view-container .bordered-container.active {
+  background-color: #28af89;
+  color: white;
+  border: none;
+}
+
+.settings-modal .view-container .bordered-container:hover {
+  border: 1px solid #28af89;
+  box-shadow: 1px 1px 6px #888888;
+}
+
+.settings-modal .view-container .tile-selection-list .bordered-container svg {
+  margin: auto;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.settings-modal .albums-list-container {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.settings-modal .albums-list-container .bordered-container {
+  color: white;
+}
+
+.settings-modal .albums-list-container .tile-list-image {
+  background-size: auto 96px;
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.settings-modal .albums-list-container .all-images-thumbnail {
+  background-image: url("assets/thumbnails/all-thumbnail.png");
+}
+
+.settings-modal .albums-list-container .nature-images-thumbnail {
+  background-image: url("assets/thumbnails/nature-thumbnail.png");
+}
+
+.settings-modal .albums-list-container .architecture-images-thumbnail {
+  background-image: url("assets/thumbnails/architecture-thumbnail.png");
+}
+
+.settings-modal .albums-list-container .pets-images-thumbnail {
+  background-image: url("assets/thumbnails/pet-thumbnail.jpg");
+}
+
+.settings-modal .nav .nav-item {
+  margin: 0 0 15px;
+  cursor: pointer;
+  padding: 5px;
+  color: #555;
+  border-bottom: 2px solid white;
+}
+
+.settings-modal .nav .nav-item:hover {
+  color: #888;
+}
+
+.settings-modal .nav .nav-item.active {
+  color: #28af89;
+  border-bottom: 2px solid #28af89;
+}
+
+.static-quick-links nav {
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  width: 110px;
+}
+
+.static-quick-links .view-container {
+  padding: 20px;
+}
+
+.view-container .apps-grid-list {
+  display: flex;
+  width: 250px;
+  flex-wrap: wrap;
+}
+
+.view-container .apps-grid-list .apps-list-item {
+  flex: 32%;
+  height: 100px;
+  position: relative;
+}
+
+.view-container .apps-grid-list .apps-list-item>a {
+  width: 100%;
+  padding: 8px 2px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 5px;
+}
+
+.view-container .apps-grid-list .apps-list-item>a:hover {
+  background-color: #eee;
+}
+
+.view-container .apps-grid-list .apps-list-item .apps-anchor-image {
+  width: 45px;
+}
+
+.static-quick-links .nav .nav-item {
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 5px;
+  color: #555;
+  border-bottom: 2px solid white;
+}
+
+.static-quick-links .nav .nav-item:hover {
+  color: #888;
+}
+
+.static-quick-links .nav .nav-item.active {
+  color: #28af89;
+  border-bottom: 2px solid #28af89;
+}
+
+.gc-copyright {
+  display: none;
+}
+
+.gc-tooltip {
+  border-radius: 15px;
+  max-width: 300px;
+}
+
+.gc-tooltip[data-guidechimp-position="bottom"] .gc-progressbar {
+  border-radius: 0 0 0 15px;
+  left: 5px;
+  background-color: #28af89;
+}
+
+.gc-progressbar {
+  left: 4px;
+  background-color: #28af89;
+  border-radius: 15px 0 0 0;
+}
+
+.gc-progressbar[aria-valuenow="100"] {
+  border-radius: 15px 15px 0 0;
+  width: 97.5% !important;
+  left: 4px;
+  background-color: #28af89;
+}
+
+.gc-pagination-theme-circles .gc-pagination-item.gc-pagination-active,
+.gc-pagination-theme-circles .gc-pagination-item:hover {
+  background-color: #28af89;
+}
+
+.gc-navigation-prev:hover,
+.gc-navigation-next:hover {
+  border-color: #28af89;
+}
+
+.gc-overlay {
+  opacity: 0.6;
+}
+
+.advertisements-conatiner {
+  position: fixed;
+  gap: 10px;
+  bottom: 10px;
+  right: 10px;
+  grid-template-columns: 1fr 200px 400px 200px !important;
+  align-items: end;
+}
+
+.rectangle-advertisement {
+  width: 600px;
+  height: 90px;
+}
+
+.square-advertisement {
+  width: 200px;
+  height: 200px;
+}
+
+[hidden] {
+  display: none;
+}
+
+.logo-container {
+  margin-bottom: 10px;
+  width: 50%;
+  min-width: 500px;
+  z-index: 1;
+}
+
+.logo-container:hover .right img {
+  display: inline;
+}
+
+.logo-container .left,
+.logo-container .right {
+  flex: 1 0 50px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-container .right {
+  padding-left: 20px;
+}
+
+.logo-container .right img {
+  display: none;
+  width: 25px;
+  cursor: pointer;
+}
+
+.logo-container .branding {
+  width: 300px;
+}
+
+.logo-container .branding img {
+  padding: 0 10px;
+  margin: auto;
+  height: 95px;
+}
+
+.logo-container .branding .timer {
+  text-align: center;
+  font-size: 68px;
+  height: 95px;
+}
+
+.buddies-modal-header .modal-header {
+  width: 100%;
+  display: inline-flex;
+  flex: 1 1 auto;
+  align-items: center;
+}
+
+.buddies-modal-header .new-group-button {
+  cursor: pointer;
+  color: #28af89;
+}
+
+.tabbing-buddies-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.modal-footer {
+  text-align: center;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.modal-footer .success-button {
+  background-color: #28af89;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.modal-footer .failure-button {
+  color: #28af89;
+  padding: 0 4px;
+}
+
+.group .group-heading {
+  cursor: pointer;
+  font-weight: 800;
+  color: #333;
+}
+
+.group .header-row,
+.group .group-list-row {
+  height: 22px;
+}
+
+.group .header-row:hover .group-options {
+  display: block;
+}
+
+.group .group-heading,
+.group .member-name {
+  min-height: 28px;
+  display: inline-flex;
+  flex: 1 1 auto;
+  align-items: center;
+}
+
+.group .member-name {
+  font-size: 12px;
+}
+
+.group .member-name .admin-tag {
+  color: #ccc;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.group .group-heading .group-icon {
+  font-size: 22px;
+  margin-right: 5px;
+}
+
+.group .group-heading:hover .group-icon {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+.group .group-impact,
+.group .group-member,
+.group .group-icon {
+  color: #28af89;
+  font-weight: 800;
+}
+
+.group .group-impact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.group .group-impact .group-options {
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 10px;
+  display: none;
+  position: relative;
+  top: 3px;
+}
+
+.group .group-options:hover {
+  background: #ddd;
+}
+
+.group .group-list-row .member-impact {
+  color: #28af89;
+  font-weight: 800;
+}
+
+.group .group-list-row .member-name {
+  margin-left: 27px;
+}
+
+.group-horizontal-line {
+  border-bottom: 1px solid #ddd;
+  margin-top: 5px;
+}
+
+.create-group-modal {
+  right: -200px;
+  top: 2px;
+}
+
+.create-group-modal .modal-header h2 {
+  color: #333;
+}
+
+.group-options-modal.modal-container {
+  right: -125px;
+  top: 50px;
+  padding: 10px 0;
+  width: 120px;
+}
+
+.group-options-modal .modal-title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.group-options-modal ul li {
+  padding: 5px 12px;
+  cursor: pointer;
+  border-top: 1px solid #ccc;
+}
+
+.group-options-modal ul li:hover {
+  background: #ddd;
+}
+
+.group-rename-modal.modal-container {
+  right: -210px;
+  top: 50px;
+  text-align: center;
+}
+
+.group-rename-modal .modal-title {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.group-rename-modal .modal-body input {
+  padding: 3px 5px;
+  border-radius: 5px;
+  display: block;
+}
+
+.group-rename-modal .modal-footer button {
+  background: #28af89;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.second-level-modal {
+  left: 255px;
+}
+
+.invite-to-group-modal.modal-container {
+  width: 300px;
+}
+
+.invite-to-group-modal .modal-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.invite-to-group-modal .modal-body {
+  border-radius: 10px;
+  border: 1px solid #28af89;
+  padding: 10px;
+}
+
+.invite-to-group-modal .modal-body h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.invite-to-group-modal .modal-body input {
+  margin: 10px 0;
+  display: block;
+  width: 100%;
+  border: none;
+}
+
+.invite-to-group-modal .modal-body .copy-link {
+  text-align: center;
+}
+
+.invite-to-group-modal .modal-body .copy-link button {
+  color: #28af89;
+}
+
+.groups-container {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.accept-invite-modal.modal-container {
+  width: 55% !important;
+  max-width: 445px;
+  margin: auto;
+  padding: 40px 40px 39px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 8px 40px rgb(25 26 26 / 20%);
+  height: 350px;
+  text-align: center;
+}
+
+.accept-invite-modal .modal-header img.logo {
+  position: absolute;
+  top: -70px;
+  left: 30%;
+  width: 170px;
+}
+
+.accept-invite-modal .modal-header h3 {
+  font-size: 22px;
+}
+
+.accept-invite-modal .modal-header .green {
+  color: #28af89;
+}
+
+.accept-invite-modal .modal-body .bold-text {
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.accept-invite-modal .modal-body .green {
+  color: #28af89;
+}
+
+.accept-invite-modal .modal-footer .half-wide {
+  width: 120px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.accept-invite-modal .modal-footer .full-wide button {
+  background-color: #eeb905;
+  padding: 7px 15px;
+  color: white;
+  border-radius: 10px;
+  width: 180px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.accept-invite-modal .modal-footer .full-wide .text-yellow {
+  color: #eeb905;
+}
+
+.accept-invite-modal .modal-footer .full-wide {
+  width: 100%;
+}
+
+.accept-invite-modal .modal-footer div {
+  gap: 35px;
+}
+
+.album-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.album-header .album-back-button {
+  cursor: pointer;
+  color: #28af89;
+  display: inline-block;
+  width: 31%;
+}
+
+.album-header .album-back-button svg {
+  display: inline;
+  position: relative;
+  bottom: 1px;
+  font-size: 18px;
+}
+
+.album-header .album-name {
+  margin: auto;
+}
+
+.album-header .empty-right {
+  width: 31%;
+}
+
+.album-images-list .bordered-container .tile-list-image {
+  background-repeat: no-repeat;
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+  background-size: auto 96px;
+  border: none;
+}
+
+.settings-modal header {
+  padding: 20px 20px 0;
+}
+
+.settings-modal .body {
+  height: 310px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-top: 15px;
+  padding: 0 20px;
+}
+
+.album-footer {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  background-color: white;
+  width: 295px;
+  display: flex;
+  gap: 10px;
+}
+
+.album-footer button {
+  background-color: #28af89;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 10px;
+}
+
+.external-link-container {
+  margin-top: 15px;
+}
+
+.external-link-container .external-link-input {
+  width: 100%;
+  border: none;
+  padding: 5px 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.external-link-container .external-link-input:focus {
+  outline: none;
+}
+
+.external-link-container button.submit {
+  background-color: #28af89;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.external-link-container .help-section {
+  margin-top: 15px;
+}
+
+.external-link-container .help-section button {
+  color: #28af89;
+}
+
+button.header-button>*,
+button.settings-button>* {
+  pointer-events: none;
+}
+
+.shortcuts-container {
+  z-index: 10;
+  margin-top: 20px;
+}
+
+.shortcuts-container .shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 577px;
+  align-items: center;
+}
+
+.shortcut-item {
+  flex: 1 0 21%;
+  align-items: center;
+  border-radius: 8px;
+  min-width: 112px;
+  max-width: 112px;
+  height: auto;
+  cursor: pointer;
+  padding: 16px 0;
+  position: relative;
+}
+
+.shortcut-item .more-actions {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.shortcut-item .more-actions > svg {
+  height: 15px;
+  width: 15px;
+}
+
+.shortcut-item .more-actions:hover {
+  background-color: rgba(100, 100, 100, 0.4);
+}
+
+.shortcut-item:hover .more-actions {
+  display: block;
+}
+
+.shortcut-item:hover {
+  background: rgba(100, 100, 100, 0.2);
+}
+
+.shortcut-actions-modal {
+  padding: 0;
+  padding: 10px 0;
+  border-radius: 5px;
+  width: auto;
+  position: absolute;
+}
+
+.shortcut-actions-modal button {
+  width: 100%;
+  text-align: left;
+  padding: 5px 20px;
+}
+
+.shortcut-actions-modal button:hover {
+  background-color: #bbb;
+}
+
+.shortcut-icon {
+  border-radius: 25px;
+  padding: 13px;
+  background-color: white;
+  display: inline-block;
+  color: black;
+  width: 48px;
+  height: 48px;
+}
+
+.shortcut-icon svg {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  top: 3px;
+  left: 3px;
+  color: #444;
+}
+
+.shortcut-icon img {
+  height: 22px;
+  width: 22px;
+  left: 1px;
+  position: relative;
+}
+
+.shortcut-title {
+  margin-top: 6px;
+}
+
+.shortcut-modal {
+  top: -200px;
 }

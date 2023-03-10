@@ -1,4 +1,6 @@
-let API_URL = "http://localhost:3001/api/userInfo";
+import { BACKEND_URL } from "../config";
+
+let API_URL = BACKEND_URL + "/api/userInfo";
 
 export const updateImpactLevel = async (userId, level) => {
   let response = await fetch(API_URL + "/updateImpactLevel", {

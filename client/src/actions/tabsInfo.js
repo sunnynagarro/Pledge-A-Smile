@@ -1,4 +1,6 @@
-let API_URL = "http://localhost:3001/api";
+import { BACKEND_URL } from "../config";
+
+let API_URL = BACKEND_URL + "/api";
 
 export const updateUserTabsOpened = async (userId) => {
   let response = await fetch(API_URL + "/tabsInfo/updateUserTabs", {

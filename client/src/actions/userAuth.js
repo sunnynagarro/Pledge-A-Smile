@@ -1,4 +1,6 @@
-let API_URL = "http://localhost:3001/auth";
+import { BACKEND_URL } from "../config";
+
+let API_URL = BACKEND_URL + "/auth";
 
 export const emailLogin = async (reqBody) => {
   let response = await fetch(API_URL + "/emailLogin", {
